@@ -32,6 +32,7 @@ Following table contains the authentication logs of the subject Karakurt servers
 | 109.169.14.109
 | 104.243.34.214
 | 37.252.0.143
+| 46.166.143.114 
 
 Durring our CTI research on Karakurt / Conti Servers we are able to identify the use of SOCKS proxy pivoting technique with a open source tool called [Ligolo-ng](https://github.com/tnpitsecurity/ligolo-ng) against multiple victims.
 
