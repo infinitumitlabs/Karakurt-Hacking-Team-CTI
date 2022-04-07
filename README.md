@@ -9,6 +9,12 @@ One of the most valuable pieces of threat intelligence we discovered during this
 | karakurt.co                 |  209.222.98.19  |
 | stok-061153.stokermate.com  |  104.238.61.153 |
 
+Real IP Address of Onion site used by Karakurt Hacking Team as a public leak page
+
+| Onion site                                                      |    IP          |
+| ----------------------------------------------------------------| ----------------|
+| lhxxtrqraokn63f3nubhbjrzxkrgduq3qogp3yr424tkpvh3z7n4kcyd.onion  | 104.243.34.214 |
+
 
 Following table contains the authentication logs of the subject Karakurt servers with IP **209.222.98.19** and **104.238.61.153**
 
