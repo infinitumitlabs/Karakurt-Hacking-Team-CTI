@@ -15,6 +15,10 @@ Real IP Address of Onion site used by Karakurt Hacking Team as a public leak pag
 | ----------------------------------------------------------------| ----------------|
 | lhxxtrqraokn63f3nubhbjrzxkrgduq3qogp3yr424tkpvh3z7n4kcyd.onion  | 104.243.34.214 |
 
+## Karakurt Leak Site
+
+![Data_Karakurt](https://user-images.githubusercontent.com/46815608/162378797-0413c443-ae28-4fee-a6f3-87c8a4a3a986.PNG)
+
 
 Following table contains the authentication logs of the subject Karakurt servers with IP **209.222.98.19** and **104.238.61.153**
 
