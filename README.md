@@ -1,6 +1,6 @@
 # Karakurt Hacking Team Indicators of Compromise (IOC)
 
-These IOCs were released as part of CTI team research by Infinitum IT. The full report is available [here]()
+These IOCs were released as part of CTI team research by Infinitum IT. The full report is available [here](https://github.com/infinitumitlabs/Karakurt-Hacking-Team-CTI/raw/main/Threat%20Spotlight%20Conti%20Ransomware%20Group%20Behind%20the%20Karakurt%20Hacking%20Team.pdf)
 
 One of the most valuable pieces of threat intelligence we discovered during this CTI investigation was the the IP address of the Karakurt / Conti data storage and Command and Control Servers.
 
