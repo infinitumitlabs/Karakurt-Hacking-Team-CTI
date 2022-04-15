@@ -54,4 +54,12 @@ Following table contains the Ligolo-ng Agent and Command and Control Server used
 | 104.194.9.238:455/download/lig2.ext
 | 104.238.61.153
 
+## Source Code of Data Leak Page Used by Karakurt Threat Group  [ Update - Published ]
+
+When we connected to the Karakurt Blog Web Server, we saw that all of the stolen data had been categorized by a Software that was being developed by Karakurt members.
+![sQ5iK5_L](https://user-images.githubusercontent.com/42712921/163533238-8e688868-a3c2-444c-8b7d-acedf6a3dfb3.jpg)
+
+
+
+
 
