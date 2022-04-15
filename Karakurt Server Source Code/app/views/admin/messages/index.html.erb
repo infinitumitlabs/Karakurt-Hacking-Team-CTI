@@ -1,0 +1,93 @@
+<% title "Messages" %>
+<style>
+    .button.is-primary.is-outlined:hover > .icon > .feather {
+        color: #fff;
+    }
+</style>
+<div id="app-project" class="view-wrapper is-webapp messages-page" data-page-title="Messages" data-naver-offset="214" data-menu-item="#messages-navbar-menu" data-mobile-item="#home-sidebar-menu-mobile">
+  <div class="page-content-wrapper">
+    <div class="page-content is-relative">
+      <div class="page-content-inner">
+        <div class="action-page-wrapper action-page-v2">
+          <div class="wrapper-outer">
+            <div class="side-wrapper" style="border-right: 1px solid #e5e5e5; width: 550px;">
+              <div class="side-inner">
+                <div class="side-title">
+                  <h3 class="dark-inverted is-inline">Messages</h3>
+                  <%= link_to all_admin_messages_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button is-primary is-outlined is-small fa-pull-right' do %>
+                    <span class="icon is-small mr-1">
+                      <i data-feather="trash-2"></i>
+                    </span>delete all
+                  <% end %>
+                </div>
+
+                <div class="action-list">
+                  <% @messages.each do |message| %>
+                    <%= link_to admin_message_path(message), class: 'media-flex', remote: true do %>
+                      <div class="flex-meta message-title">
+                        <button class="button is-primary is-outlined is-small mt-2 delete-message" data-id="<%= message.id %>">
+                          <span class="icon is-small">
+                            <i data-feather="trash-2"></i>
+                          </span>
+                        </button>
+                      </div>
+                      <div class="flex-meta message-title">
+                        <span><%= message.title %></span>
+                        <p><%= message.content.truncate(100) %></p>
+                      </div>
+                      <div class="flex-end">
+                        <i data-feather="chevron-right" class="mt-2"></i>
+                      </div>
+                    <% end %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+
+            <div class="wrapper-inner" style="flex-basis: 75%;">
+              <div class="action-box">
+                <div class="box-content">
+                  <div class="invoice-section is-flex is-bordered">
+                    <div class="meta">
+                      <h3>&blk34;&blk34;&blk34;&blk34;&blk34; &blk34;&blk34;&blk34;&blk34;&blk34; &blk34;&blk34;&blk34;&blk34;&blk34;</h3>
+                      <span>&blk14;&blk14;&blk14;&blk14;&blk14;&blk14;&blk14;@&blk14;&blk14;&blk14;&blk14;&blk14;&blk14;&blk14;.&blk14;&blk14;&blk14;</span>
+                    </div>
+                    <div class="end">
+                      <h3>&blk34;&blk34;&blk34;&blk34;&blk34; &blk34;&blk34;&blk34; &blk34;&blk34;&blk34;&blk34;</h3>
+                      <span>&blk14;&blk14; &blk14;&blk14;&blk14; &blk14;&blk14;&blk14;&blk14;, &blk14;&blk14;:&blk14;&blk14;</span>
+                    </div>
+                  </div>
+
+                  <div class="sender-message is-dark-card-bordered is-dark-1bg-4">
+                    <h3>&blk34;&blk34;&blk34;&blk34; &blk34;&blk34;&blk34;&blk34; &blk34;&blk34;&blk34;&blk34;&blk34; &blk34;&blk34;&blk34;&blk34;&blk34;&blk34;&blk34;&blk34; &blk34;&blk34;&blk34;&blk34; &blk34;&blk34;&blk34;&blk34;&blk34;&blk34;&blk34; &blk34;&blk34;&blk34;&blk34;&blk34;&blk34;.</h3>
+                    <p>&blk12; &blk12;&blk12; &blk12;. &blk12;&blk12;&blk12; &blk12;&blk12; &blk12;&blk12;&blk12;&blk12;&blk12;&blk12;. &blk12;&blk12;&blk12;&blk12;&blk12;&blk12;&blk12; &blk12;&blk12;&blk12; &blk12;&blk12;&blk12;&blk12;. &blk12;&blk12;&blk12; &blk12;&blk12;&blk12; &blk12;&blk12;. &blk12;&blk12;&blk12;&blk12;&blk12;&blk12;&blk12; &blk12;&blk12;&blk12;&blk12;&blk12;&blk12; &blk12;&blk12;&blk12;. &blk12;&blk12;&blk12;&blk12; &blk12;&blk12; &blk12;&blk12;&blk12; &blk12; &blk12;&blk12;&blk12;&blk12;&blk12;. &blk12;&blk12;&blk12;&blk12; &blk12;&blk12;&blk12;&blk12; &blk12; &blk12;&blk12;&blk12;&blk12; &blk12;&blk12; &blk12;&blk12;&blk12;. &blk12; &blk12;&blk12;&blk12;&blk12; &blk12;&blk12;&blk12;&blk12; &blk12;&blk12;&blk12;&blk12; &blk12; &blk12;&blk12;&blk12;&blk12;&blk12; &blk12;&blk12;&blk12;&blk12;&blk12;, &blk12;&blk12;&blk12; &blk12;&blk12;&blk12; &blk12; &blk12;&blk12;&blk12;&blk12;. &blk12;&blk12;&blk12;&blk12;&blk12;&blk12;&blk12; &blk12;&blk12;&blk12;&blk12;&blk12;&blk12; &blk12;&blk12;&blk12;. &blk12;&blk12;&blk12;&blk12; &blk12;&blk12;&blk12;&blk12;&blk12;&blk12;&blk12; &blk12;&blk12;&blk12;&blk12;&blk12;&blk12; &blk12;&blk12;&blk12;. &blk12;&blk12;&blk12;&blk12;</p>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+    $('body').on('click', 'button.delete-message', function(event) {
+        if (confirm('Are you sure?')) {
+            var btn_del = $(this);
+            var message_id = btn_del.attr('data-id');
+
+            $.ajax({
+                url: '/zLz4rBPNLSabywhahHt8MCgp9DRDvtSQ/admin/messages/' + message_id,
+                type: 'DELETE',
+                success: function() {
+                    btn_del.closest('a').remove();
+                }
+            });
+        }
+
+        return false;
+    });
+</script>

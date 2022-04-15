@@ -1,0 +1,264 @@
+<% title "Company: #{@company.name}" %>
+
+<style>
+    .company-form-layout {
+
+    }
+
+    /*.form-layout.company-form-layout .form-outer .form-body {*/
+    /*    display: -webkit-box;*/
+    /*    display: -ms-flexbox;*/
+    /*    display: flex;*/
+    /*}*/
+    /**/
+    /*.form-layout.company-form-layout .form-outer .form-body .form-section {*/
+    /*    -webkit-box-flex: 2;*/
+    /*    -ms-flex-positive: 2;*/
+    /*    flex-grow: 2;*/
+    /*    padding: 10px;*/
+    /*    width: 50%;*/
+    /*}*/
+
+    .form-layout.company-form-layout .form-outer .form-body .form-section .form-section-inner .radio-boxes {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        margin-left: -8px;
+        margin-right: -8px;
+    }
+
+    .form-layout.company-form-layout .form-outer .form-body .form-section .form-section-inner .radio-boxes .radio-box {
+        position: relative;
+        width: calc(50% - 16px);
+        margin: 8px;
+    }
+
+    .form-layout.company-form-layout .form-outer .form-body .form-section .form-section-inner .radio-boxes .radio-box input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .form-layout.company-form-layout .form-outer .form-body .form-section .form-section-inner .radio-boxes .radio-box input:checked + .radio-box-inner .fee, .form-layout.company-form-layout .form-outer .form-body .form-section .form-section-inner .radio-boxes .radio-box input:checked + .radio-box-inner p {
+        color: #fcfcfc;
+    }
+    .form-layout.company-form-layout .form-outer .form-body .form-section .form-section-inner .radio-boxes .radio-box .radio-box-inner p {
+        font-family: "Montserrat",sans-serif;
+    }
+
+    .form-layout.company-form-layout .form-outer .form-body .form-section .form-section-inner .radio-boxes .radio-box .radio-box-inner .fee {
+        font-family: "Roboto",sans-serif;
+        font-weight: 700;
+        color: #111;
+        font-size: 1.5rem;
+        line-height: 1;
+    }
+
+    .form-layout.company-form-layout .form-outer .form-body .form-section .form-section-inner .radio-boxes .radio-box input:checked + .radio-box-inner {
+        background: #111;
+        border-color: #111;
+        -webkit-box-shadow: 0 14px 26px -12px rgba(0, 1, 17, 0.42),0 4px 23px 0px rgba(0,0,0,.12),0 8px 10px -5px rgba(0, 1, 17, 0.2);
+        box-shadow: 0 14px 26px -12px rgba(0, 1, 17, 0.42),0 4px 23px 0px rgba(0,0,0,.12),0 8px 10px -5px rgba(0, 1, 17, 0.2);
+    }
+
+    .form-layout.company-form-layout .form-outer .form-body .form-section .form-section-inner .radio-boxes .radio-box .radio-box-inner {
+        background: #fff;
+        border: 1px solid rgb(229, 229, 229);
+        text-align: center;
+        border-radius: 4px;
+        font-family: "Roboto",sans-serif;
+        font-weight: 600;
+        font-size: .9rem;
+        -webkit-transition: all .3s;
+        transition: all .3s;
+        padding: 15px 10px;
+    }
+
+    .form-layout.company-form-layout .form-outer .form-body .form-section .form-section-header {
+        border-bottom: none;
+        margin-bottom: 0;
+    }
+
+    .form-layout.is-stacked .form-outer .form-body .form-section.form-section-company-config .form-section-inner.is-horizontal {
+        max-width: inherit;
+    }
+
+    .list-widget {
+        padding-top: 15px;
+    }
+
+    i.fa.image-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        color: #2f2f2f;
+    }
+
+    .list-widget.list-widget-v2 .image-icon {
+        height: 25px;
+        width: 25px;
+    }
+
+    i.fa.image-icon.fa-file-pdf {
+        color: rgba(231, 15, 16, 0.75);
+    }
+
+    i.fa.image-icon.fa-file-archive {
+        color: rgba(239, 168, 25, 0.75);
+    }
+
+    i.fa.image-icon.fa-file-word {
+        color: rgba(41, 118, 148, 0.75);
+    }
+
+    i.fa.image-icon.fa-file-excel {
+        color: rgba(22, 187, 22, 0.75);
+    }
+
+    .files-list-pagination {
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+    }
+
+    .list-widget .inner-list .inner-list-item + .inner-list-item {
+        margin-top: 0;
+    }
+
+    .media-flex-center {
+        margin-bottom: 0.2rem;
+    }
+
+    .flight-summary {
+        display: inline-block;
+        width: 100%;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 6px;
+        border: 1px solid rgb(237, 237, 237);
+        text-align: center;
+    }
+
+    .flight-summary.is-featured {
+        background: #111;
+        border-color: #111;
+        /*-webkit-box-shadow: 0 14px 26px -12px rgba(0, 1, 17, 0.42),0 4px 23px 0px rgba(0,0,0,.12),0 8px 10px -5px rgba(0, 1, 17, 0.2);*/
+        /*box-shadow: 0 14px 26px -12px rgba(0, 1, 17, 0.42),0 4px 23px 0px rgba(0,0,0,.12),0 8px 10px -5px rgba(0, 1, 17, 0.2);*/
+        margin-bottom: 20px;
+    }
+
+    .flight-summary .flight-price {
+        font-family: "Roboto",sans-serif;
+        font-size: 2rem;
+    }
+
+    .flight-summary .flight-price span.sub-text {
+        display: block;
+        font-size: 1rem;
+    }
+
+    .flight-summary.is-featured .flight-price {
+        color: #fff;
+    }
+
+    .is-grey {
+        color: #464646;
+    }
+
+    .file-date {
+        margin-right: 10px;
+        font-size: 90%;
+        color: #777;
+    }
+
+    .file-name-label {
+        font-family: "Montserrat", sans-serif;
+        font-size: .95rem;
+        color: #000;
+        font-weight: 500;
+    }
+
+    .buttons .button:not(:last-child):not(.is-fullwidth) {
+        margin-right: 0.2rem;
+    }
+
+    .file-buttons button.is-small.is-outlined {
+        border-color: #dbdbdb;
+        color: #363636;
+    }
+
+    .files-paginate {
+        margin-top: 10px;
+        padding-top: 15px;
+        border-top: 1px dotted #b5b5b5;
+    }
+</style>
+
+<!-- Content Wrapper -->
+<div id="app-project" class="view-wrapper is-webapp" data-page-title="Company" data-naver-offset="214" data-menu-item="#layouts-navbar-menu" data-mobile-item="#home-sidebar-menu-mobile">
+  <div class="page-content-wrapper">
+    <div class="page-content is-relative">
+      <div class="page-content-inner">
+        <div class="columns">
+          <div class="column is-7">
+            <%= render partial: 'admin/companies/form' %>
+          </div>
+          <div class="column is-5">
+            <div class="flight-summary is-featured" style="">
+              <div class="flight-price is-family-monospace">
+                <%= number_to_human_size(@company.data_size_published) %> <span class="is-grey">/</span> <%= number_to_human_size(@company.data_size) %>
+                <span class="sub-text"><%= @company.published_perc %>% PUBLISHED</span>
+              </div>
+            </div>
+
+            <% if @files_publishing.present? %>
+              <div class="list-widget list-widget-v2 tabbed-widget is-straight">
+                <div class="widget-head">
+                  <h3 class="dark-inverted">Files</h3>
+                  <span class="tag is-rounded is-warning">Publishing</span>
+                </div>
+
+                <div>
+                  <div class="title-wrap">
+                    <h3 class="dark-inverted"><%= number_to_human_size(@company.data_size_published) %> ← <%= number_to_human_size(@company.data_size) %></h3>
+                    <span><%= @company.published_perc %>%</span>
+                  </div>
+
+                  <div class="progress-wrap m-b-10 m-t-10">
+                    <progress class="progress is-primary is-tiny" value="<%= @company.published_perc %>" max="100"><%= @company.published_perc %>%</progress>
+                  </div>
+                </div>
+
+                <div id="files_publishing" class="inner-list-wrapper is-active">
+                  <%= render partial: 'admin/companies/files_publishing', locals: { files: @files_publishing, table: 'publishing' } %>
+                </div>
+              </div>
+            <% end %>
+
+            <% if @files_published.present? %>
+              <div class="list-widget list-widget-v2 tabbed-widget is-straight">
+                <div class="widget-head">
+                  <h3 class="dark-inverted">Files</h3>
+                  <span class="tag is-rounded is-success">Published</span>
+                </div>
+
+                <div id="files_published" class="inner-list-wrapper is-active">
+                  <%= render partial: 'admin/companies/files_published', locals: { files: @files_published, table: 'published' } %>
+                </div>
+              </div>
+            <% end %>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

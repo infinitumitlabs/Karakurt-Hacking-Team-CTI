@@ -1,0 +1,43 @@
+<% title @company.name %>
+
+<div class="wrapper">
+  <div class="wrap">
+    <div class="detail-page">
+      <div class="detail-title">
+        <h1><%= @company.name %></h1>
+      </div>
+
+      <div class="detail-meta">
+        <div class="post-meta">
+          <span class="post-date"><%= @company.published_date.strftime('%d %^b %Y') %></span>
+          <% if @company.industry.present? %>
+            <em>/</em>
+            <span class="post-category"><%= @company.industry %></span>
+          <% end %>
+        </div>
+      </div>
+
+      <div>
+        <article class="detail">
+          <p><%= @company.description %></p>
+          <% if @company.situation_update.present? %>
+            <hr/>
+            <h2>Situation Update</h2>
+            <p><%= @company.situation_update %></p>
+          <% end %>
+        </article>
+
+        <div class="related-post">
+          <div class="box-detail-caption">
+            <span>Files</span>
+          </div>
+
+          <div id="company_files">
+            <%= render 'companies/files' %>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="inner-list">
+  <% files.each do |file| %>
+    <div class="inner-list-item media-flex-center">
+      <i class="far <%= icon_by_file_mime_type(file.mime_type) %>"></i>
+      <div class="file-name-label flex-meta is-light flex-truncate"><%= file.filename %></div>
+      <div class="flex-end">
+        <span class="is-light is-family-monospace file-date"><%= number_to_human_size(file.filesize) %>, </span>
+        <span class="is-light is-family-monospace file-date"><%= date_or_dash(file.published_datetime) %></span>
+        <div class="buttons file-buttons">
+          <%= link_to admin_company_download_file_path(@company.uuid, file.uuid), class: 'button is-small is-dark is-outlined', target: :_blank do %>
+            <span class="icon is-small">
+                <i class="fa fa-download"></i>
+            </span>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<% if files.total_pages > 1 %>
+  <div class="files-paginate">
+    <%= paginate_ajax files, page_links: false, table: table %>
+  </div>
+<% end %>

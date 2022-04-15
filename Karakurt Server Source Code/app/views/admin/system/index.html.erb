@@ -1,0 +1,32 @@
+<% title "System" %>
+
+<div id="app-project" class="view-wrapper is-webapp" data-page-title="System" data-naver-offset="214" data-menu-item="#system-navbar-menu" data-mobile-item="#home-sidebar-menu-mobile">
+  <div class="page-content-wrapper">
+    <div class="page-content is-relative">
+      <div class="page-content-inner">
+        <div class="columns is-multiline">
+          <div class="column is-6">
+            <%= render partial: 'cpu' %>
+          </div>
+
+          <div class="column is-3">
+            <%= render partial: 'network_interfaces' %>
+          </div>
+
+          <div class="column is-3">
+            <%= render partial: 'disks' %>
+          </div>
+
+          <div class="column is-12">
+            <%= render partial: 'table_size' %>
+          </div>
+
+          <div class="column is-12">
+            <%= render partial: 'panel_config' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

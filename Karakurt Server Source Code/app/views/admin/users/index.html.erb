@@ -1,0 +1,85 @@
+<%= title 'Users' %>
+<div id="app-project" class="view-wrapper is-webapp" data-page-title="Users" data-naver-offset="214" data-menu-item="#users-navbar-menu" data-mobile-item="#home-sidebar-menu-mobile">
+  <div class="page-content-wrapper">
+    <div class="page-content is-relative">
+      <div class="page-content-inner">
+        <div class="account-wrapper">
+          <div class="columns">
+            <div class="column is-12">
+              <div class="stat-widget table-widget-v1 is-straight">
+                <div class="widget-head">
+                  <h3 class="dark-inverted">Users</h3>
+                  <%= link_to new_admin_user_path, class: 'button h-button is-primary' do %>
+                    <span class="icon is-small">
+                      <i class="fas fa-plus"></i>
+                    </span>
+                    <span>Add User</span>
+                  <% end %>
+                </div>
+
+                <table class="table is-hoverable is-fullwidth">
+                  <tbody>
+                  <% @users.each do |user| %>
+                    <tr>
+                      <td class="is-media">
+                        <div class="h-avatar is-medium">
+                          <%= image_tag "adm/avatars/#{user.id}.jpg", class: 'avatar' %>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="double-line"><span class="dark-inverted"><%= user.username %></span></div>
+                      </td>
+                      <td>
+                        <div class="double-line">
+                          <span class="dark-inverted"><%= user.created_at.strftime('%d %b %Y') %></span>
+                          <span>created at</span>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="double-line">
+                          <span class="dark-inverted">49</span>
+                          <span>companies</span>
+                        </div>
+                      </td>
+                      <td>
+                        <%# todo: need fix after SQLite %>
+                        <% if user.admin == 1 || user.admin == true %>
+                          <div class="tag-wrap"><span class="tag is-primary is-rounded is-elevated">admin</span></div>
+                        <% end %>
+                      </td>
+                      <td>
+                        <%# todo: need fix after SQLite %>
+                        <% if user.is_active == 1 || user.is_active == true %>
+                          <div class="tag-wrap"><span class="tag is-green is-rounded is-elevated">Active</span></div>
+                        <% else %>
+                          <div class="tag-wrap"><span class="tag is-rounded is-elevated">Disable</span></div>
+                        <% end %>
+                      </td>
+                      <td class="is-end">
+                        <div class="buttons">
+                          <%= link_to edit_admin_user_path(user), class: 'button is-dark-outlined' do %>
+                            <span class="icon is-small">
+                              <i data-feather="edit-2"></i>
+                            </span>
+                          <% end %>
+                          <% unless user.admin %>
+                            <%= link_to admin_user_path(user), method: :delete, data: { confirm: 'Are you sure?' }, class: 'button is-dark-outlined' do %>
+                              <span class="icon is-small">
+                                <i data-feather="trash-2"></i>
+                              </span>
+                            <% end %>
+                          <% end %>
+                        </div>
+                      </td>
+                    </tr>
+                  <% end %>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

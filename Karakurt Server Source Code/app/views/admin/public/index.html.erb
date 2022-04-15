@@ -1,0 +1,102 @@
+<div id="app-project" class="view-wrapper is-webapp" data-page-title="Admin Panel" data-naver-offset="214" data-menu-item="#dashboards-navbar-menu" data-mobile-item="#home-sidebar-menu-mobile">
+  <div class="page-content-wrapper">
+    <div class="page-content is-relative">
+      <div class="page-content-inner project-details all-projects">
+
+        <div class="all-projects-header">
+          <div class="header-item">
+            <div class="item-inner">
+              <span><%= @companies_size %></span>
+              <p>Companies</p>
+            </div>
+          </div>
+          <div class="header-item">
+            <div class="item-inner">
+              <span><%= @messages_size %></span>
+              <p>Messages</p>
+            </div>
+          </div>
+          <div class="header-item">
+            <div class="item-inner">
+              <span><%= @users_size %></span>
+              <p>Users</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="columns">
+          <div class="column is-9">
+            <div class="tabs-wrapper">
+              <div class="tabs-inner">
+                <div class="tabs">
+                  <ul>
+                    <li data-tab="new-tab" class="is-active"><a><i data-feather="file"></i><span>New</span></a></li>
+                    <li data-tab="pre-released-tab"><a><i data-feather="watch"></i><span>PreReleased</span></a></li>
+                    <li data-tab="releasing-tab"><a><i data-feather="zap"></i><span>Releasing</span></a></li>
+                    <li data-tab="released-tab"><a><i data-feather="radio"></i><span>Released</span></a></li>
+                  </ul>
+
+                  <%= form_tag admin_path, method: :get, remote: true do %>
+                    <div class="field has-addons">
+                      <div class="control is-expanded">
+                        <%= search_field_tag :search, params[:search], class: 'input', placeholder: 'Company name' %>
+                      </div>
+                      <div class="control">
+                        <%= submit_tag "Search", name: nil, class: 'button is-light', style: 'border-color: #dbdbdb;' do %>
+                          <i class="fa fa-search"></i>
+                        <% end %>
+                      </div>
+                    </div>
+                  <% end %>
+
+                </div>
+              </div>
+
+              <div id="new-tab" class="tab-content is-active">
+                <%= render partial: 'admin/public/tab_new' %>
+              </div>
+              <div id="pre-released-tab" class="tab-content">
+                <%= render partial: 'admin/public/tab_pre_released' %>
+              </div>
+              <div id="releasing-tab" class="tab-content">
+                <%= render partial: 'admin/public/tab_releasing' %>
+              </div>
+              <div id="released-tab" class="tab-content">
+                <%= render partial: 'admin/public/tab_released' %>
+              </div>
+            </div>
+          </div>
+          <div class="column is-3">
+            <%= link_to new_admin_company_path, class: 'button h-button btn-new-company' do %>
+              <span class="icon">
+                <i class="fa fa-plus"></i>
+              </span>
+              <span>New Company</span>
+            <% end %>
+            <div class="status-block">
+              <div class="tweets-header">
+                <div class="username dark-inverted">
+                  <span>Messages (last 3)</span>
+                </div>
+                <%= link_to 'View all', admin_messages_path, class: 'action-link' %>
+              </div>
+              <div class="status-tweets">
+                <div class="updates">
+                  <% @messages.each do |message| %>
+                    <%= link_to admin_message_path(message), class: 'update' do %>
+                      <div class="update-content">
+                        <div class="timestamp is-family-monospace"><%= message.created_at.strftime('%d %b %Y, %T') %></div>
+                        <div class="title"><%= message.title %></div>
+                        <div class="tweet"><%= message.content.truncate(200) %></div>
+                      </div>
+                    <% end %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

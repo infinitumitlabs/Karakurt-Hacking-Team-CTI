@@ -1,0 +1,43 @@
+<div class="wrapper">
+  <div class="wrap">
+    <article class="big-sticky-post">
+      <div class="post-meta">
+        <span class="post-date"><%= Date.today.strftime('%^b %d') %><br/><%= Date.today.strftime('%Y') %></span>
+      </div>
+      <div class="post-thumb"><%= image_tag 'monkeys.jpg' %></div>
+      <h1><%= @panel_config.home_head_title %></h1>
+      <div class="post-des"><%= md_to_html(@panel_config.home_head_desc) %></div>
+    </article>
+
+    <div class="tag-news-caption">
+      <p class="fixtext">Pre-release</p>
+      <div class="description"><%= md_to_html(@panel_config.home_pre_release_desc) %></div>
+    </div>
+
+    <div id="companies_prereleases" class="tags-three pre-release">
+      <%= render 'public/companies/prereleases' %>
+    </div>
+
+    <div class="big-page-caption medium">
+      <p>Releasing</p>
+      <div class="description"><%= md_to_html(@panel_config.home_releasing_desc) %></div>
+    </div>
+
+    <div id="companies_releasings">
+      <%= render 'public/companies/releasings' %>
+    </div>
+
+    <div class="box-category">
+      <div class="col-caption medium" style="margin-bottom: 20px; margin-top: 30px;">
+        <span>Released</span>
+      </div>
+
+      <div class="description"><%= md_to_html(@panel_config.home_released_desc) %></div>
+
+      <div id="companies_released">
+        <%= render 'public/companies/released' %>
+      </div>
+    </div>
+
+  </div>
+</div>

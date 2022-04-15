@@ -1,0 +1,35 @@
+<div class="project-details-inner">
+  <div class="columns">
+    <div class="column is-12">
+      <div class="flex-table">
+        <div class="flex-table-header">
+          <span>Company</span>
+          <span>Progress</span>
+          <span class="cell-center flex-15-width">Status</span>
+          <span class="cell-end flex-15-width">Planned Publish</span>
+        </div>
+        <% @companies_releasings.each do |company| %>
+          <div class="flex-table-item">
+            <div class="flex-table-cell"><%= link_to company.name, admin_company_path(company.uuid) %></div>
+            <div class="progress-col">
+              <div class="title-wrap is-family-monospace">
+                <h3 class="dark-inverted"><%= number_to_human_size(company.data_size_published) %> ← <%= number_to_human_size(company.data_size) %></h3>
+                <span><%= company.published_perc %>%</span>
+              </div>
+
+              <div class="progress-wrap">
+                <progress class="progress is-primary is-tiny" value="<%= company.published_perc %>" max="100"><%= company.published_perc %>%</progress>
+              </div>
+            </div>
+            <div class="flex-table-cell cell-center flex-15-width"><span class="tag is-rounded <%= company_status_color(company.status) %>"><%= company.status %></span></div>
+            <div class="flex-table-cell cell-end is-family-monospace flex-15-width"><%= company.published_date.strftime('%d %b %Y') %></div>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="companies-pagination">
+        <%= paginate_ajax @companies_releasings, table: 'releasings' %>
+      </div>
+    </div>
+  </div>
+</div>

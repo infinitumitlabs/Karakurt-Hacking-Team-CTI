@@ -1,0 +1,62 @@
+<% @releasings.each_slice(4) do |row| %>
+  <div class="row">
+    <% row.each do |company| %>
+      <div class="col-xs-6 col-md-3 col-sm-3" style="padding: 15px;">
+        <article class="ciz-post">
+          <div class="post-thumb" style="text-align: center;">
+            <%= link_to company_path(company.uuid) do %>
+              <%= draw_image("companies/#{company.picture}", 120) %>
+            <% end %>
+          </div>
+          <h3 class="post-title">
+            <%= link_to company.name, company_path(company.uuid) %>
+          </h3>
+          <div class="post-meta">
+            <% if company.website.present? %>
+            <span class="post-category">
+              <i class="fa fa-link"></i> <%= link_to 'Website', company.website %>
+            </span>
+            <% end %>
+            <% if company.industry.present? %>
+              <div class="pull-right">
+                <span class="post-category"><%= company.industry %></span>
+              </div>
+            <% end %>
+          </div>
+          <% if company.address.present? %>
+            <div class="post-meta company-address">
+              <i class="fa fa-map-marker"></i><span class="post-date ml-2"><%= company.address %></span>
+            </div>
+          <% end %>
+
+          <div class="post-des">
+            <% if company.description.length > 200 %>
+              <%= company.description[0..200] %><span class="hide"><%= company.description[201..-1] %></span>
+              <a href="#" class="btn-expand">expand</a>
+            <% else %>
+              <%= company.description %>
+            <% end %>
+          </div>
+
+          <div class="post-footer text-center">
+            <div class="progress">
+              <div class="progress-bar progress-bar-dark progress-bar-striped text-monospace"
+                   role="progressbar"
+                   aria-valuenow="<%= company.published_perc %>"
+                   aria-valuemin="0"
+                   aria-valuemax="100"
+                   style="width:<%= company.published_perc %>%">
+                <%= "#{company.published_perc}% Published" %>
+              </div>
+            </div>
+            <%= link_to 'Read More', company_path(company.uuid), class: 'btn-read-more' %>
+          </div>
+        </article>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
+<div class="paging-outer">
+  <%= paginate_ajax @releasings, table: 'releasings' %>
+</div>

@@ -1,0 +1,44 @@
+<%= title @press_release.title %>
+
+<style>
+  .card-content p {
+      padding-bottom: 20px;
+  }
+</style>
+<div id="form-layout-4" class="view-wrapper is-webapp" data-page-title="<%= @press_release.title %>">
+  <div class="page-content-wrapper">
+    <div class="page-content is-relative">
+      <div class="page-content-inner">
+        <div class="columns">
+          <div class="column is-3">
+
+          </div>
+          <div class="column is-6">
+            <div class="card h-card">
+              <div class="card-image">
+                <figure class="image is-2by1">
+                  <%= draw_image("companies/#{@press_release.picture}", 100) %>
+                </figure>
+              </div>
+              <header class="card-header">
+                <div class="card-header-title"><%= @press_release.title %></div>
+              </header>
+              <div class="card-content">
+                <div class="inner-content p-t-20 p-b-20">
+                  <%= md_to_html(@press_release.content) %>
+                </div>
+              </div>
+              <div class="card-foot has-text-right p-5" style="border-top: 1px solid #e5e5e5;">
+                <%= link_to admin_press_releases_path, class: 'button h-button is-light is-dark-outlined' do %>
+                  <span class="icon"><i class="lnir lnir-arrow-left rem-100"></i></span>
+                  <span>All</span>
+                <% end %>
+                <%= link_to 'Edit', edit_admin_press_release_path(@press_release), class: 'button h-button is-primary is-dark-outlined ml-2' %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

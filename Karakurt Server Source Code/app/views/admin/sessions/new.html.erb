@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title><%= content_for?(:title) ? yield(:title) : 'Admin' %></title>
+  <%= favicon_link_tag 'favicon.png', rel: 'icon', type: 'image/png' %>
+
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag 'adm/application', media: 'all' %>
+  <%= javascript_include_tag 'adm/application' %>
+</head>
+<body>
+
+<div id="huro-app" class="app-wrapper">
+  <div class="auth-wrapper">
+    <div class="auth-wrapper-inner is-single">
+      <div class="single-form-wrap">
+        <div class="inner-wrap">
+          <div class="form-card">
+            <%= form_tag admin_login_path, class: 'contact-form text-center' do %>
+              <div id="signin-form" class="login-form">
+                <div class="field">
+                  <div class="control has-icon">
+                    <%= text_field_tag :username, nil, class: 'input', placeholder: 'Username' %>
+                    <span class="form-icon">
+                      <i data-feather="user"></i>
+                    </span>
+                  </div>
+                </div>
+                <div class="field">
+                  <div class="control has-icon">
+                    <%= password_field_tag :password, nil, class: 'input', placeholder: 'Password' %>
+                    <span class="form-icon">
+                      <i data-feather="lock"></i>
+                    </span>
+                  </div>
+                </div>
+                <div class="control login">
+                  <%= button_tag 'Enter', type: 'submit', class: 'button h-button is-primary is-bold is-fullwidth is-raised' %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

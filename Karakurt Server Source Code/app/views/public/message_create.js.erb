@@ -1,0 +1,5 @@
+$('.message-result').show().text("<%= @result %>").delay(2000).fadeOut(1000);
+$('.message-result').closest('form').find("input[type=text], textarea").val("");
+
+$('#message_textcaptcha_key').val('<%= @message.textcaptcha_key %>');
+$('#message_textcaptcha_question').text('<%= @message.textcaptcha_question %>');

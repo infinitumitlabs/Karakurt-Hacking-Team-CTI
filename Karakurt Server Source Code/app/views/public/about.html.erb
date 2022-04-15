@@ -1,0 +1,18 @@
+<% title "About" %>
+
+<div class="wrapper">
+  <div class="wrap">
+    <div class="big-page-caption">
+      <p>About</p>
+    </div>
+
+    <div class="detail-page">
+      <div class="post-thumbnail">
+        <%= image_tag 'monkeys.jpg' %>
+      </div>
+      <article class="detail">
+        <%= md_to_html(@panel_config.about_desc) %>
+      </article>
+    </div>
+  </div>
+</div>

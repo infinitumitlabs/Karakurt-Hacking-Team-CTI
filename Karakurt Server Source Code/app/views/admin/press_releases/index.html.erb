@@ -1,0 +1,68 @@
+<%= title 'Press Release' %>
+<div id="app-project" class="view-wrapper is-webapp" data-page-title="Press Release" data-naver-offset="214" data-menu-item="#press_releases-navbar-menu" data-mobile-item="#home-sidebar-menu-mobile">
+  <div class="page-content-wrapper">
+    <div class="page-content is-relative">
+      <div class="page-content-inner">
+        <div class="account-wrapper">
+          <div class="columns">
+            <div class="column is-12">
+              <div class="stat-widget table-widget-v1 is-straight">
+                <div class="widget-head">
+                  <h3 class="dark-inverted">Press Releases</h3>
+                  <%= link_to new_admin_press_release_path, class: 'button h-button is-primary' do %>
+                    <span class="icon is-small">
+                      <i class="fas fa-plus"></i>
+                    </span>
+                    <span>Add Press Release</span>
+                  <% end %>
+                </div>
+
+                <table class="table is-hoverable is-fullwidth">
+                  <tbody>
+                  <% @press_releases.each do |press_release| %>
+                    <tr>
+                      <td>
+                        <div class="double-line">
+                          <%= link_to admin_press_release_path(press_release) do %><%= press_release.title %><% end %>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="double-line">
+                          <span class="dark-inverted"><%= press_release.created_at.strftime('%d %b %Y') %></span>
+                          <span>created at</span>
+                        </div>
+                      </td>
+                      <td>
+                        <%# todo: need fix after SQLite %>
+                        <% if press_release.published == 1 || press_release.published == true %>
+                          <div class="tag-wrap"><span class="tag is-green is-rounded is-elevated">Published</span></div>
+                        <% else %>
+                          <div class="tag-wrap"><span class="tag is-rounded is-elevated">Draft</span></div>
+                        <% end %>
+                      </td>
+                      <td class="is-end">
+                        <div class="buttons">
+                          <%= link_to edit_admin_press_release_path(press_release), class: 'button is-dark-outlined' do %>
+                            <span class="icon is-small">
+                              <i data-feather="edit-2"></i>
+                            </span>
+                          <% end %>
+                          <%= link_to admin_press_release_path(press_release), method: :delete, data: { confirm: 'Are you sure?' }, class: 'button is-dark-outlined' do %>
+                            <span class="icon is-small">
+                              <i data-feather="trash-2"></i>
+                            </span>
+                          <% end %>
+                        </div>
+                      </td>
+                    </tr>
+                  <% end %>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

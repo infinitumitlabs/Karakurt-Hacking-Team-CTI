@@ -1,0 +1,31 @@
+<div class="demo-card">
+  <div class="demo-title">
+    <h3 class="title is-thin is-5">Disks</h3>
+  </div>
+  <div class="card-inner">
+    <% @disks.each do |disk| %>
+      <table class="table is-hoverable is-fullwidth">
+        <thead>
+        <tr>
+          <th><%= disk.origin %></th>
+          <th class="text-right"><%= disk.type.to_s %></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td class="tx-dark text-monospace">Free</td>
+          <td class="tx-dark text-monospace text-right"><%= number_to_human_size (disk.free_blocks * disk.block_size), precision: 4 %></td>
+        </tr>
+        <tr>
+          <td class="tx-dark text-monospace">Available</td>
+          <td class="tx-dark text-monospace text-right"><%= number_to_human_size (disk.available_blocks * disk.block_size), precision: 4 %></td>
+        </tr>
+        <tr>
+          <td class="tx-dark text-monospace">Total</td>
+          <td class="tx-dark text-monospace text-right"><%= number_to_human_size (disk.total_blocks * disk.block_size), precision: 4 %></td>
+        </tr>
+        </tbody>
+      </table>
+    <% end %>
+  </div>
+</div>

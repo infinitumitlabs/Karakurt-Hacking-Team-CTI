@@ -1,0 +1,130 @@
+<style>
+    .radio-boxes {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        margin-left: -8px;
+        margin-right: -8px;
+    }
+
+    .radio-box {
+        position: relative;
+        width: calc(50% - 16px);
+        margin: 8px;
+    }
+
+    .radio-boxes .radio-box input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .radio-boxes .radio-box .radio-box-inner {
+        padding: 5px 5px;
+        border-radius: 3px;
+        line-height: 0;
+    }
+
+    .radio-boxes .radio-box input:checked + .radio-box-inner {
+        background: #111;
+        border-color: #111;
+        -webkit-box-shadow: 0 14px 26px -12px rgba(0, 1, 17, 0.42),0 4px 23px 0px rgba(0,0,0,.12),0 8px 10px -5px rgba(0, 1, 17, 0.2);
+        box-shadow: 0 14px 26px -12px rgba(0, 1, 17, 0.42),0 4px 23px 0px rgba(0,0,0,.12),0 8px 10px -5px rgba(0, 1, 17, 0.2);
+    }
+
+    .radio-boxes .radio-box .radio-box-inner {
+        border: 1px solid rgb(229, 229, 229);
+        text-align: center;
+        font-family: "Roboto", sans-serif;
+        font-weight: 600;
+        font-size: .9rem;
+        -webkit-transition: all .3s;
+        transition: all .3s;
+    }
+
+    .radio-boxes .radio-box .radio-box-inner {
+        line-height: 0;
+    }
+</style>
+
+<%= form_with model: [:admin, @press_release], html: { class: 'form-outer' } do |f| %>
+  <div class="form-header stuck-header">
+    <div class="form-header-inner">
+      <div class="left">
+        <h3>New Press Release</h3>
+      </div>
+      <div class="right">
+        <div class="buttons">
+          <%= link_to admin_press_releases_path, class: 'button h-button is-light is-dark-outlined' do %>
+            <span class="icon">
+              <i class="lnir lnir-arrow-left rem-100"></i>
+            </span>
+            <span>Cancel</span>
+          <% end %>
+          <%= f.submit 'Save', class: "button h-button is-primary is-raised" %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-body">
+    <div class="form-section">
+      <div class="columns is-multiline">
+        <div class="column is-12">
+          <div class="field">
+            <label>Title</label>
+            <div class="control has-icon">
+              <%= f.text_field :title, class: 'input', placeholder: 'Title' %>
+              <div class="form-icon">
+                <i data-feather="file-text"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column is-12">
+          <div class="field">
+            <label>Content (markdown)</label>
+            <div class="control">
+              <%= f.text_area :content, rows: 8, class: 'textarea', placeholder: "Content..." %>
+            </div>
+          </div>
+        </div>
+        <div class="column is-12">
+          <div class="field">
+            <div class="control">
+              <label class="checkbox">
+                <%= f.check_box :published %>
+                <span></span>
+                Published?
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="column is-12">
+          <div class="field">
+            <label>Picture</label>
+            <div class="control">
+              <% (1..20).to_a.each_slice(3).to_a.each do |row| %>
+                <div class="radio-boxes">
+                  <% row.each do |picture_num| %>
+                    <% picture = "c#{picture_num}.jpg" %>
+                    <div class="radio-box">
+                      <input type="radio" name="press_release[picture]" value="<%= picture %>" <%= 'checked' if picture == f.object.picture %>/>
+                      <div class="radio-box-inner"><%= image_tag "companies/#{picture}" %></div>
+                    </div>
+                  <% end %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

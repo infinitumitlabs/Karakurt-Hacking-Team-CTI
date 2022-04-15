@@ -1,0 +1,60 @@
+<% @prereleases.each_slice(3) do |row| %>
+  <div class="row">
+    <% row.each do |company| %>
+      <div class="col-md-4 col-sm-4 col-xs-12" style="padding: 15px;">
+        <article class="ciz-post">
+          <div class="post-thumb" style="text-align: center;">
+            <span class="sale"><%= company.published_date.strftime('%d %^b %Y') %><br/><%= number_to_human_size(company.data_size) %> DATA</span>
+            <%= link_to company_path(company.uuid) do %>
+              <%= draw_image("companies/#{company.picture}", 170) %>
+            <% end %>
+          </div>
+          <h3 class="post-title">
+            <%= link_to company.name, company_path(company.uuid) %>
+          </h3>
+          <div class="post-meta">
+            <% if company.website.present? %>
+              <span class="post-category">
+                <i class="fa fa-link"></i> <%= link_to 'Website', company.website %>
+              </span>
+            <% end %>
+            <% if company.industry.present? %>
+              <div class="pull-right">
+                <span class="post-date"><%= company.industry %></span>
+              </div>
+            <% end %>
+          </div>
+          <% if company.industry.present? %>
+            <div class="post-meta company-address">
+              <i class="fa fa-map-marker"></i><span class="post-date ml-2"><%= company.address %></span>
+            </div>
+          <% end %>
+
+          <div class="post-des">
+            <p>
+              <% if company.description.length > 200 %>
+                <%= company.description[0..200] %><span class="hide"><%= company.description[201..-1] %></span>
+                <a href="#" class="btn-expand">expand</a>
+              <% else %>
+                <%= company.description %>
+              <% end %>
+            </p>
+          </div>
+
+          <div class="post-footer text-center">
+            <div class="progress">
+              <div class="progress-bar progress-bar-dark progress-bar-striped" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0">
+                <span>0% PUBLISHED</span>
+              </div>
+            </div>
+            <%= link_to 'Read More', company_path(company.uuid), class: 'btn-read-more' %>
+          </div>
+        </article>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
+<div class="paging-outer">
+  <%= paginate_ajax @prereleases, table: 'prereleases' %>
+</div>

@@ -1,0 +1,31 @@
+<table class="table is-hoverable is-fullwidth text-monospace">
+  <thead>
+  <tr>
+    <th style="width: 25%;">NAME / TITLE</th>
+    <th style="width: 5%;">IP</th>
+    <th style="width: 50%;">REFERRER</th>
+    <th style="width: 10%;">PARAMS</th>
+    <th style="width: 10%;">CREATED_AT</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% impressions.each do |impr| %>
+    <tr>
+      <td><span class="tag imr <%= status_badge(impr) %> is-family-monospace m-r-10"><%= title_badge(impr) %></span> <%= title_link(impr) %></td>
+      <td><%= impr.ip_address %></td>
+      <td><%= impr.referrer %></td>
+      <td><code><%= params_list(impr) %></code></td>
+      <td><%= impr.created_at.strftime('%d %b, %H:%M') %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<div class="columns m-t-20">
+  <div class="column is-4">
+
+  </div>
+  <div class="column is-4">
+    <%= paginate_ajax impressions %>
+  </div>
+</div>

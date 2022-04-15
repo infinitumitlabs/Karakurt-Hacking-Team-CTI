@@ -1,0 +1,15 @@
+<div class="demo-card">
+  <div class="demo-title">
+    <h3 class="title is-thin is-5">CPU</h3>
+  </div>
+  <div class="card-inner">
+    <% @cpus.each_with_index do |cpu, i| %>
+      <% idle = cpu.idle - @last.cpus[i].idle %>
+      <div class="form-group">
+        <label class="form-label d-inline-block">CPU <%= cpu.num + 1 %></label>
+        <label class="form-label text-right pull-right d-inline-block">user: <%= cpu.user - @last.cpus[i].user %>%, system: <%= cpu.system - @last.cpus[i].system %>%, idle: <%= cpu.idle - @last.cpus[i].idle %>%</label>
+        <progress class="progress is-primary is-small" value="<%= 100 - idle %>" max="100"><%= 100 - idle %>%</progress>
+      </div>
+    <% end %>
+  </div>
+</div>

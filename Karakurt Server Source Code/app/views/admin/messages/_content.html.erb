@@ -1,0 +1,21 @@
+<div class="invoice-section is-flex is-bordered">
+  <div class="meta">
+    <h3><%= "#{@message.user_name} #{@message.user_surname}" %></h3>
+    <span><%= @message.email %></span>
+  </div>
+  <div class="end">
+    <h3><%= @message.company %></h3>
+    <span><%= @message.created_at.strftime('%d %b %Y, %T') %></span>
+  </div>
+</div>
+
+<% if @message.tox_id.present? %>
+  <code class="is-family-monospace is-block" style="word-break: break-all;">
+    <strong>TOX</strong>: <%= @message.tox_id %>
+  </code>
+<% end %>
+
+<div class="sender-message is-dark-card-bordered is-dark-1bg-4">
+  <h3><%= @message.title %></h3>
+  <p><%= @message.content %></p>
+</div>

@@ -1,0 +1,7 @@
+production:
+  adapter: postgresql
+  database: <%= Rails.application.credentials.dig(:production, :db_name) %>
+  host: localhost
+  port: 5432
+  username: <%= Rails.application.credentials.dig(:production, :db_user) %>
+  password: <%= Rails.application.credentials.dig(:production, :db_pass) %>

@@ -1,0 +1,85 @@
+<% title "Contact Us" %>
+
+<div class="wrapper">
+  <div class="wrap">
+    <div class="big-page-caption">
+      <p>contact us</p>
+    </div>
+    <div class="page-contact">
+      <div class="row">
+        <div class="col-md-6 col-sm-12">
+          <h3>CONTACT INFORMATION</h3>
+          <div class="contact-information">
+            <%= md_to_html(@panel_config.contact_desc) %>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <%= form_for @message, url: contact_us_path, html: { class: 'contact-form' }, remote: true do |f| %>
+            <h3>CONTACT FORM</h3>
+
+            <div class="row">
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="field-item">
+                  <%= f.text_field :user_name, placeholder: 'Name' %>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="field-item">
+                  <%= f.text_field :user_surname, placeholder: 'Surname' %>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="field-item">
+                  <%= f.text_field :company, placeholder: 'Company' %>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="field-item">
+                  <%= f.text_field :email, placeholder: 'Email' %>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <div class="field-item">
+                  <%= f.text_field :tox_id, placeholder: 'TOX ID' %>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <div class="field-item">
+                  <%= f.text_field :title, placeholder: 'Title' %>
+                </div>
+              </div>
+            </div>
+            <div class="field-item">
+              <%= f.text_area :content, placeholder: "Text here..." %>
+            </div>
+
+            <div style="border-top: 1px dotted black; margin-top: 20px; padding-top: 10px;">
+              <%= textcaptcha_fields(f) do %>
+                <p class="tx-dark text-monospace">Quick spam check to prove you're a human!<span class="text-muted" style="display: block; font-size: 13px; font-style: italic;">The answer must be one word or one digit.</span></p>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="field-item">
+                      <%= f.label :textcaptcha_answer, @message.textcaptcha_question, id: 'message_textcaptcha_question' %>
+                      <%= f.text_field :textcaptcha_answer, value: '', autocomplete: :off, placeholder: 'Answer' %>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+
+            <div class="field-item">
+              <button class="my-btn" type="submit">SUBMIT</button>
+            </div>
+            <div class="message-result"></div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

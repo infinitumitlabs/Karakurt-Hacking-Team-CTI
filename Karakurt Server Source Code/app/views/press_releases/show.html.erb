@@ -1,0 +1,70 @@
+<% title @press_release.title %>
+
+<div class="wrapper press-release show">
+  <div class="wrap">
+    <div class="detail-page">
+
+      <div class="detail-title">
+        <h1><%= @press_release.title %></h1>
+      </div>
+
+      <div class="detail-meta">
+        <div class="post-meta">
+          <span class="post-date"><%= @press_release.created_at.strftime('%d %b %Y, %T') %></span>
+        </div>
+      </div>
+
+      <div class="post-thumbnail">
+        <%= draw_image("companies/#{@press_release.picture}", 500) %>
+      </div>
+
+      <div class="cols">
+        <div class="colleft">
+          <article class="detail">
+            <%= md_to_html(@press_release.content) %>
+          </article>
+        </div>
+
+        <div class="colright">
+          <div class="col-caption">
+            <span>RECENT POSTS</span>
+          </div>
+
+          <% if @press_release_last.present? || @press_release_recent.present? %>
+            <div class="box-trending">
+              <article class="trending-item">
+                <div class="post-thumb">
+                  <%= link_to press_release_path(@press_release_last.uuid) do %>
+                    <%= draw_image("companies/#{@press_release_last.picture}", 160) %>
+                  <% end %>
+                </div>
+                <h3>
+                  <%= link_to @press_release_last.title, press_release_path(@press_release_last.uuid) %>
+                </h3>
+              </article>
+              <% if @press_release_recent.present? %>
+                <ul class="list-trending">
+                  <% @press_release_recent.each do |release| %>
+                    <li>
+                      <div class="post-thumb">
+                        <%= link_to press_release_path(release.uuid) do %>
+                          <%= draw_image("companies/#{release.picture}", 160) %>
+                        <% end %>
+                      </div>
+                      <h3 class="post-title"><%= link_to release.title, press_release_path(release.uuid) %></h3>
+                    </li>
+                  <% end %>
+                </ul>
+              <% end %>
+            </div>
+          <% else %>
+            <div class="subcribe-box">
+              <p class="des">Coming soon...</p>
+            </div>
+          <% end %>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+</div>

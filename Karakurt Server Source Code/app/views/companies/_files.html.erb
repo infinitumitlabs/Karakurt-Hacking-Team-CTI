@@ -1,0 +1,98 @@
+<%#= link_to current_page_params.merge(foo: true), remote: true do %>
+
+<div class="row">
+  <div class="col-sm-9" style="padding-right: 0;">
+    <div class="list-tags">
+      <%= link_to '#', remote: true, class: (params['type'].blank? ? 'active' : '') do %>
+        <strong>ALL</strong> / <span class="text-monospace"><%= number_to_human_size(@files_size || 0) %></span><br><small>&nbsp;</small>
+      <% end %>
+      <%= link_to '?type=images', remote: true, class: (params['type'] == 'images' ? 'active' : '') do %>
+        <strong>Images</strong> / <span class="text-monospace"><%= number_to_human_size(@files_groups['images'] || 0) %></span><br><small>jpg, png, jpeg</small>
+      <% end %>
+      <%= link_to '?type=documents', remote: true, class: (params['type'] == 'documents' ? 'active' : '') do %>
+        <strong>Documents</strong> / <span class="text-monospace"><%= number_to_human_size(@files_groups['documents'] || 0) %></span><br><small>txt, doc, pdf, rtf, xslx, docx</small>
+      <% end %>
+      <%= link_to '?type=media', remote: true, class: (params['type'] == 'media' ? 'active' : '') do %>
+        <strong>Media</strong> / <span class="text-monospace"><%= number_to_human_size(@files_groups['media'] || 0) %></span><br><small>mp3, wav, midi</small>
+      <% end %>
+      <%= link_to '?type=archives', remote: true, class: (params['type'] == 'archives' ? 'active' : '') do %>
+        <strong>Archives</strong> / <span class="text-monospace"><%= number_to_human_size(@files_groups['archives'] || 0) %></span><br><small>rar, zip, 7z, tar</small>
+      <% end %>
+      <%= link_to '?type=others', remote: true, class: (params['type'] == 'others' ? 'active' : '') do %>
+        <strong>Other</strong> / <span class="text-monospace"><%= number_to_human_size(@files_groups['others'] || 0) %></span><br><small>&nbsp;</small>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <div class="text-center" style="padding: 0 10px 4px; background-color: #111; color: #fff;">
+      <span style="font-family: Oswald, serif; font-size: 30px;"><%= number_to_human_size(@company.data_size_published) %> <small class="text-muted">/</small> <%= number_to_human_size(@company.data_size) %></span>
+      <span class="center-block text-center text-monospace" style="font-size: 11px;"><%= @company.published_perc %>% PUBLISHED</span>
+    </div>
+  </div>
+</div>
+
+<div class="row" style="padding-top: 20px;">
+  <div class="col-md-4">
+    <div class="shopbar">
+      <div class="sortby">
+        <p data-toggle="dropdown" aria-expanded="false" style="cursor: default;">
+          Sort by <%= params['sort'] ||= 'created_at' %>
+          <i class="fa fa-caret-down"></i>
+        </p>
+        <ul class="dropdown-menu">
+          <li class="<%= (params['sort'] == 'created_at' || params['sort'].blank?) ? 'current' : '' %>"><%= link_to 'Sort by created_at', current_page_params.merge(sort: :created_at), remote: true %></li>
+          <li class="<%= params['sort'] == 'filename' ? 'current' : '' %>"><%= link_to 'Sort by name', current_page_params.merge(sort: :filename), remote: true %></li>
+          <li class="<%= params['sort'] == 'filesize' ? 'current' : '' %>"><%= link_to 'Sort by size', current_page_params.merge(sort: :filesize), remote: true %></li>
+        </ul>
+      </div>
+
+      <h3>Showing <%= @files.current_page %>-<%= @files.total_pages %> of <%= @files.total_entries %> results</h3>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="action-buttons pull-right">
+      <%= link_to company_files_url(@company.uuid) do %><i class="fa fa-download"></i> Download list files<% end %>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="box-search-sidebar">
+      <%= form_tag company_path(@company.uuid), method: :get, remote: true do %>
+        <%= search_field_tag :search, params[:search] %>
+        <%= submit_tag "Search", name: nil %>
+      <% end %>
+
+<!--      <input type="search" placeholder="Begin typing...">-->
+<!--      <button>Search</button>-->
+    </div>
+  </div>
+</div>
+
+<div class="tags-three">
+  <table class="cart-table table table-bordered">
+    <thead>
+    <tr>
+      <th>File name</th>
+      <th class="text-right">Size</th>
+      <th class="text-right">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @files.each do |file| %>
+      <tr>
+        <td><i class="fa fa-file-word-o" style="margin-right: 5px;"></i> <%= file.filename %></td>
+        <td class="text-right"><%= number_to_human_size(file.filesize) %></td>
+        <td class="text-right"><i class="fa fa-download" style="margin-right: 5px;"></i>
+          <%= link_to 'download', company_download_file_path(@company.uuid, file.uuid) %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+
+<div class="paging-outer">
+  <div class="paging-outer">
+    <%= paginate_ajax @files %>
+  </div>
+</div>

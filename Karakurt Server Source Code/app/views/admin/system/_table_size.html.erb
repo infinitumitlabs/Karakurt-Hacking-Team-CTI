@@ -1,0 +1,25 @@
+<div class="demo-card">
+  <div class="demo-title">
+    <h3 class="title is-thin is-5">PG General Table Size Information</h3>
+  </div>
+  <div class="card-inner">
+      <table class="table is-hoverable is-fullwidth">
+        <thead>
+          <tr>
+            <th>table</th>
+            <th class="text-right">approximate_row_count</th>
+            <th class="text-right">size</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @db_tables_data.each do |row| %>
+            <tr>
+              <td class="tx-dark text-monospace"><%= row['table_name'] %></td>
+              <td class="text-right tx-dark text-monospace"><%= row['approximate_row_count'] %></td>
+              <td class="text-right tx-dark text-monospace"><%= row['total_size'] %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+  </div>
+</div>

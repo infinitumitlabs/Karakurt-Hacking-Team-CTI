@@ -1,0 +1,35 @@
+<% title "Press Releases" %>
+
+<div class="wrapper press-release">
+  <div class="wrap">
+    <div class="big-page-caption">
+      <p>Press Releases</p>
+    </div>
+
+    <div class="grids-outer">
+      <div class="grids">
+        <% @press_releases.each do |press_release| %>
+          <div class="grids-item">
+            <article class="ciz-post">
+              <div class="post-thumb">
+                <%= link_to press_release_path(press_release.uuid) do %>
+                  <%= draw_image("companies/#{press_release.picture}", 160) %>
+                <% end %>
+              </div>
+              <h3 class="post-title">
+                <%= link_to press_release.title, press_release_path(press_release.uuid) %>
+              </h3>
+              <div class="post-meta">
+                <span class="post-date"><%= press_release.created_at.strftime('%d %b %Y, %T') %></span>
+              </div>
+              <div class="post-des">
+                <p><%= press_release.content.truncate(100) %></p>
+              </div>
+            </article>
+          </div>
+        <% end %>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<% title "Auction" %>
+
+<div class="wrapper">
+  <div class="wrap">
+    <div class="big-page-caption">
+      <p>Auction</p>
+    </div>
+
+    <div class="detail-page">
+      <article class="detail">
+        <%= md_to_html(@panel_config.auction_desc) if @panel_config.auction_desc.present? %>
+      </article>
+    </div>
+  </div>
+</div>

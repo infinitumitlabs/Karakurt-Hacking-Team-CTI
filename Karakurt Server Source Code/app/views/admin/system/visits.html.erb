@@ -1,0 +1,36 @@
+<% title "Visits" %>
+
+<style>
+    .table tbody td {
+      font-family: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace !important;
+    }
+
+    span.tag.imr {
+        height: inherit;
+    }
+
+    .page-content-wrapper {
+        max-width: 1600px;
+    }
+</style>
+<div id="app-project" class="view-wrapper is-webapp" data-page-title="System" data-naver-offset="214" data-menu-item="#system-navbar-menu" data-mobile-item="#home-sidebar-menu-mobile">
+  <div class="page-content-wrapper">
+    <div class="page-content is-relative">
+      <div class="page-content-inner">
+        <div class="columns is-multiline">
+          <div class="column is-12">
+            <div class="demo-card">
+              <div class="demo-title">
+                <h3 class="title is-thin is-5">Visits</h3>
+              </div>
+              <div id="visits_list_container" class="card-inner">
+                <%= render partial: 'admin/system/visits_list', locals: { impressions: @impressions } %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

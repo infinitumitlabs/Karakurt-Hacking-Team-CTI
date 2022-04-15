@@ -1,0 +1,111 @@
+<div class="demo-card">
+  <div class="demo-title">
+    <h3 class="title is-thin is-5">Panel Config</h3>
+  </div>
+  <div class="card-inner">
+    <%= form_with(url: admin_save_app_config_path, model: @panel_config, method: :post) do |f| %>
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <div class="form-body">
+        <div class="form-section">
+          <div class="columns is-multiline">
+
+            <div class="column is-12">
+              <div class="field">
+                <label>OS file-user</label>
+                <div class="control">
+                  <%= f.text_field :os_file_user, class: 'input', placeholder: 'Title' %>
+                </div>
+              </div>
+            </div>
+
+            <hr/>
+
+            <div class="column is-12">
+              <div class="field">
+                <label>HOME page. Head title (<span class="danger-text has-text-weight-bold">NOT</span> markdown)</label>
+                <div class="control">
+                  <%= f.text_field :home_head_title, class: 'input', placeholder: 'Title' %>
+                </div>
+              </div>
+            </div>
+
+            <div class="column is-12">
+              <div class="field">
+                <label>HOME page. Head description (markdown)</label>
+                <div class="control">
+                  <%= f.text_area :home_head_desc, rows: 4, class: 'textarea', placeholder: "Description..." %>
+                </div>
+              </div>
+            </div>
+
+            <div class="column is-12">
+              <div class="field">
+                <label>HOME page. PRE-RELEASE description (markdown)</label>
+                <div class="control">
+                  <%= f.text_area :home_pre_release_desc, rows: 4, class: 'textarea', placeholder: "Description..." %>
+                </div>
+              </div>
+            </div>
+
+            <div class="column is-12">
+              <div class="field">
+                <label>HOME page. RELEASING description (markdown)</label>
+                <div class="control">
+                  <%= f.text_area :home_releasing_desc, rows: 4, class: 'textarea', placeholder: "Description..." %>
+                </div>
+              </div>
+            </div>
+
+            <div class="column is-12">
+              <div class="field">
+                <label>HOME page. RELEASED description (markdown)</label>
+                <div class="control">
+                  <%= f.text_area :home_released_desc, rows: 4, class: 'textarea', placeholder: "Description..." %>
+                </div>
+              </div>
+            </div>
+
+            <div class="column is-12">
+              <div class="field">
+                <label>ABOUT page. Description (markdown)</label>
+                <div class="control">
+                  <%= f.text_area :about_desc, rows: 4, class: 'textarea', placeholder: "Description..." %>
+                </div>
+              </div>
+            </div>
+
+            <div class="column is-12">
+              <div class="field">
+                <label>CONTACT US page. Description (markdown)</label>
+                <div class="control">
+                  <%= f.text_area :contact_desc, rows: 4, class: 'textarea', placeholder: "Description..." %>
+                </div>
+              </div>
+            </div>
+
+            <div class="column is-12">
+              <div class="field">
+                <label>AUCTION page. Description (markdown)</label>
+                <div class="control">
+                  <%= f.text_area :auction_desc, rows: 4, class: 'textarea', placeholder: "Description..." %>
+                </div>
+              </div>
+            </div>
+
+            <div class="column is-12">
+              <div class="buttons">
+                <%= link_to admin_path, class: 'button h-button is-light is-dark-outlined' do %>
+                  <span class="icon"><i class="lnir lnir-arrow-left rem-100"></i></span>
+                  <span>Back</span>
+                <% end %>
+                <%= f.submit "Save", class: "button h-button is-primary is-raised" %>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

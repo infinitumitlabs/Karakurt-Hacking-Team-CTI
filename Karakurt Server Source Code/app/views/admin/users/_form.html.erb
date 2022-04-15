@@ -1,0 +1,70 @@
+<%= form_with model: [:admin, @user], html: { class: 'form-outer' } do |f| %>
+  <div class="form-header stuck-header">
+    <div class="form-header-inner">
+      <div class="left">
+        <h3>New User</h3>
+      </div>
+      <div class="right">
+        <div class="buttons">
+          <%= link_to admin_users_path, class: 'button h-button is-light is-dark-outlined' do %>
+            <span class="icon">
+              <i class="lnir lnir-arrow-left rem-100"></i>
+            </span>
+            <span>Cancel</span>
+          <% end %>
+          <%= f.submit 'Save', class: "button h-button is-primary is-raised" %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-body">
+    <div class="form-section">
+      <div class="columns is-multiline">
+        <div class="column is-12">
+          <div class="field">
+            <label>Username</label>
+            <div class="control has-icon">
+              <%= f.text_field :username, class: 'input', placeholder: 'user_6B98wKYDHgJ9Muqq' %>
+              <div class="form-icon">
+                <i data-feather="user"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column is-12">
+          <div class="field">
+            <label>Password</label>
+            <div class="control has-icon">
+              <%= f.password_field :password, class: 'input', placeholder: 'JGV7FZ5C2fprmE3Lpss3YAQAfFXUrh' %>
+              <div class="form-icon">
+                <i data-feather="alert-circle"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column is-12">
+          <div class="field">
+            <div class="control">
+              <label class="checkbox">
+                <%= f.check_box :admin %>
+                <span></span>
+                Admin?
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="column is-12">
+          <div class="field">
+            <div class="control">
+              <label class="checkbox">
+                <%= f.check_box :is_active %>
+                <span></span>
+                Active?
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

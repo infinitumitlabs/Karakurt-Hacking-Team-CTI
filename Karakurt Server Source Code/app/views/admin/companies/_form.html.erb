@@ -1,0 +1,444 @@
+<style>
+    .form-layout.company-form-layout .form-outer .form-body .form-section .form-section-inner .radio-boxes .radio-box .radio-box-inner {
+        padding: 5px 5px;
+        border-radius: 3px;
+        line-height: 0;
+    }
+
+    .is-combo .combo-box .box-inner .combo-item span, .is-combo .image-combo-box .box-inner .combo-item span, .is-combo .stacked-combo-box .box-inner .combo-item span, .is-combo .user-combo-box .box-inner .combo-item span {
+        font-weight: inherit;
+    }
+
+    .h-select .select-drop .drop-inner .option-row input:checked + .option-meta {
+        background: #f2f2f2;
+    }
+
+    .h-select .select-box {
+        color: #363636;
+    }
+
+    .radio, .checkbox {
+        padding-top: 0.85em !important;
+    }
+
+    .view-wrapper.is-webapp .is-stuck.stuck-header .form-head-inner, .view-wrapper.is-webapp .is-stuck.stuck-header .form-header-inner {
+        max-width: 602px;
+        margin-left: 358px;
+    }
+
+    .robot-status {
+        margin-top: 6px;
+        padding-top: 1px;
+    }
+
+    .robot-log {
+        padding: 10px;
+        margin-top: 10px;
+    }
+
+    .robot-log.is-danger {
+        background-color: #fef6eb;
+    }
+
+    .nearest-pubdate-hint {
+      color: #777;
+      font-style: italic;
+    }
+
+    .shares-count-blocks {
+      margin-top: 4px;
+    }
+
+    .shares-count-blocks span {
+      margin-top: 3px;
+    }
+
+    .form-foot-inner > a {
+        float: right;
+        margin-right: 20px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+</style>
+<div class="form-layout company-form-layout is-stacked">
+  <%= form_with model: [:admin, @company], html: { class: 'form-outer' } do |f| %>
+    <div class="form-header stuck-header">
+      <div class="form-header-inner">
+        <div class="left">
+          <h3><%= @company.name %></h3>
+        </div>
+        <div class="right">
+          <div class="buttons">
+            <%= link_to admin_path, class: 'button h-button is-light is-dark-outlined' do %>
+              <span class="icon"><i class="lnir lnir-arrow-left rem-100"></i></span>
+              <span>Back</span>
+            <% end %>
+            <%= f.submit "Save", class: "button h-button is-primary is-raised" %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-body">
+      <div class="form-section">
+        <div class="columns is-multiline">
+          <div class="column is-12">
+            <div class="field">
+              <label>Name</label>
+              <div class="control has-icon">
+                <%= f.text_field :name, class: 'input', placeholder: 'Company name' %>
+                <div class="form-icon">
+                  <i data-feather="home"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column is-12">
+            <div class="field">
+              <label>URL</label>
+              <div class="control has-icon">
+                <%= f.text_field :website, class: 'input', placeholder: 'Website' %>
+                <div class="form-icon">
+                  <i data-feather="link-2"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column is-12">
+            <div class="field">
+              <label>Address</label>
+              <div class="control has-icon">
+                <%= f.text_field :address, class: 'input', placeholder: 'Address' %>
+                <div class="form-icon">
+                  <i data-feather="map-pin"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column is-12">
+            <div class="field">
+              <label>Industry</label>
+              <div class="control">
+                <div class="h-select">
+                  <div class="select-box">
+                    <span><%= @company.industry.blank? ? 'Select a Industry' : @company.industry %></span>
+                  </div>
+                  <div class="select-icon">
+                    <i data-feather="chevron-down"></i>
+                  </div>
+                  <div class="select-drop has-slimscroll-sm">
+                    <div class="drop-inner">
+                      <div class="option-row">
+                        <input type="radio" name="company[industry]" value="NONE" <%= 'checked' if 'NONE' == @company.industry %>/>
+                        <div class="option-meta">
+                          <span>NONE</span>
+                        </div>
+                      </div>
+                      <% industries.sort.each do |industry| %>
+                        <div class="option-row">
+                          <input type="radio" name="company[industry]" value="<%= industry %>" <%= 'checked' if industry == @company.industry %>/>
+                          <div class="option-meta">
+                            <span><%= industry %></span>
+                          </div>
+                        </div>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column is-12">
+            <div class="field">
+              <label>Description</label>
+              <div class="control">
+                <%= f.text_area :description, rows: 4, class: 'textarea', placeholder: "Description..." %>
+              </div>
+            </div>
+          </div>
+          <div class="column is-12">
+            <div class="field">
+              <label>Situation Update</label>
+              <div class="control">
+                <%= f.text_area :situation_update, rows: 2, class: 'textarea', placeholder: "Situation Update..." %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-section">
+        <div class="form-section-header">
+          <div class="left">
+            <h3>Robot Workflow</h3>
+          </div>
+        </div>
+        <div class="form-section-inner is-horizontal">
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label">Directory Code</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <%= f.text_field :directory_code, class: 'input is-family-monospace dir-code cursor-unset', value: (f.object.new_record? ? '-' : f.object.directory_code), disabled: 'disabled' %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label">Archive</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <% if f.object.new_record? %>
+                    <label class="checkbox is-outlined is-success">-</label>
+                  <% else %>
+                    <label class="checkbox is-outlined is-success">
+                      <%= f.check_box :archive_ready, disabled: f.object.archive_ready == true %>
+                      <span></span>
+                      is ready
+                    </label>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label">Robot Status</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <span class="tag <%= status_color_class(f.object.worker_archive_status) %> is-family-monospace robot-status"><%= (f.object.archive_ready == true && f.object.worker_archive_status == 'none') ? 'waiting...' : (f.object.worker_archive_status ||= 'none') %></span>
+                  <span style="margin-left: 15px; margin-right: 15px;">→</span>
+                  <span class="tag <%= status_color_class(f.object.worker_publish_status) %> is-family-monospace robot-status"><%= (f.object.worker_publish_status == 'waiting' && f.object.status != 'active') ? 'waiting activation...' : (f.object.worker_publish_status ||= 'none') %></span>
+                </div>
+                <% if f.object.worker_archive_status == 'failure' || f.object.worker_publish_status == 'failure' %>
+                  <div class="robot-log is-danger"><%= f.object.worker_log %></div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+          <% unless f.object.new_record? %>
+            <div class="field is-horizontal">
+              <div class="field-label is-normal">
+                <label class="label">Share Current</label>
+              </div>
+              <div class="field-body">
+                <div class="field shares-count-blocks">
+                  <% f.object.shares_count.times do |t| %>
+                    <% t += 1 %>
+                    <% if t <= f.object.share_current %>
+                      <span class="tag is-success is-family-monospace"><%= t %></span>
+                    <% else %>
+                      <span class="tag is-light is-family-monospace"><%= t %></span>
+                    <% end %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+          <% if f.object.new_record? %>
+            <div class="field is-horizontal">
+              <div class="field-label is-normal">
+                <label class="label">Shares Count</label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control is-expanded">
+                    <%= f.number_field :shares_count, class: 'input', placeholder: 10, min: 1, style: 'width: 60%;' %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label">Nearest PubDate <% if f.object.share_in_minutes > 0 %><small class="nearest-pubdate-hint">every <%= f.object.share_in_minutes %> min</small><% end %></label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control has-icon" style="margin-top: 10px;">
+                  <%= f.text_field :next_publication_date, value: (f.object.next_publication_date.present? ? f.object.next_publication_date.strftime('%d %b %Y, %T') : '░░ ░░░ ░░░░, ░░:░░'), class: 'input is-family-monospace cursor-unset', disabled: 'disabled', style: 'width: 60%;' %>
+                  <div class="form-icon">
+                    <i data-feather="calendar"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label">Published Date</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control has-icon">
+                  <%= f.text_field :published_date, value: (f.object.published_date.present? ? f.object.published_date.strftime('%d %b %Y') : nil), class: 'input is-family-monospace form-datepicker', placeholder: 'Publish Date', style: 'width: 60%;', disabled: !f.object.new_record? %>
+                  <div class="form-icon">
+                    <i data-feather="calendar"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-section form-section-company-config is-grey">
+        <div class="form-section-header">
+          <div class="left">
+            <h3>Configuration</h3>
+          </div>
+        </div>
+        <div class="form-section-inner is-horizontal">
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label">States</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <% states.each_with_index do |state, index| %>
+                    <label class="radio is-outlined is-primary <%= 'no-padding-left' if index.zero? %>"><input type="radio" name="company[state]" value="<%= state %>" <%= 'checked' if state == @company.state %>/><span></span><%= state.capitalize %></label>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label">Status</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <label class="radio is-outlined is-primary no-padding-left"><input type="radio" name="company[status]" value="deleted" <%= 'checked' if 'deleted' == @company.status %>/><span></span>Deleted</label>
+                  <label class="radio is-outlined is-warning"><input type="radio" name="company[status]" value="no active" <%= 'checked' if 'no active' == @company.status %>/><span></span>No active</label>
+                  <label class="radio is-outlined is-success"><input type="radio" name="company[status]" value="active" <%= 'checked' if 'active' == @company.status %>/><span></span>Active</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label">Data Size</label>
+            </div>
+            <div class="field-body">
+              <div class="field has-addons">
+                <div class="control is-expanded">
+                  <%= f.number_field :data_size, class: 'input', placeholder: '100' %>
+                </div>
+                <div class="control">
+                  <a class="button is-static">bytes, files: <code><%= f.object.count_files %></code></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% if @company.new_record? || (%w[new pre-release releasing].include? @company.state) %>
+            <div class="field is-horizontal">
+              <div class="field-label is-normal">
+              </div>
+              <div class="field-body">
+                <input id="bytes_to_giga" type="number" min="0" step="0.5" value="" class="" placeholder="Gb" size="5"/>
+              </div>
+            </div>
+          <% end %>
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label">Operator</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <div class="h-select has-media is-dropup">
+                    <div class="select-box">
+                      <span>All</span>
+                    </div>
+                    <div class="select-icon">
+                      <i data-feather="chevron-down"></i>
+                    </div>
+                    <div class="select-drop has-slimscroll-sm">
+                      <div class="drop-inner">
+                        <div class="option-row">
+                          <input type="radio" name="notification_select_1" checked>
+                          <div class="option-meta">
+                            <span>All</span>
+                          </div>
+                        </div>
+                        <% @users.each do |user| %>
+                          <div class="option-row">
+                            <input type="radio" name="operators">
+                            <div class="option-meta">
+                              <%= image_tag "adm/avatars/#{user.id}.jpg" %>
+                              <span><%= user.username %></span>
+                            </div>
+                          </div>
+                        <% end %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="field is-horizontal">
+            <div class="field-label is-normal">
+              <label class="label">Picture</label>
+            </div>
+            <div class="field-body">
+              <div class="column is-12 no-padding">
+                <div class="field">
+                  <div class="control">
+                    <% (1..20).to_a.each_slice(3).to_a.each do |row| %>
+                      <div class="radio-boxes">
+                        <% row.each do |picture_num| %>
+                          <% picture = "c#{picture_num}.jpg" %>
+                          <div class="radio-box">
+                            <input type="radio" name="company[picture]" value="<%= picture %>" <%= 'checked' if picture == @company.picture %>/>
+                            <div class="radio-box-inner"><%= image_tag "companies/#{picture}" %></div>
+                          </div>
+                        <% end %>
+                      </div>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <% if current_user.admin? %>
+      <div class="form-foot">
+        <div class="form-foot-inner">
+          <%= link_to 'Delete', admin_company_path(@company.uuid), method: :delete, data: { confirm: 'Are you sure?' }, class: 'button h-button is-danger is-raised' %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+<script>
+    var datepickers = document.querySelectorAll('.form-datepicker');
+    var datePicker = [];
+    for (var i = 0; i < datepickers.length; i++) {
+        datePicker[i] = new Pikaday({
+            field: datepickers[i],
+            firstDay: 1,
+            format: 'D MMM YYYY',
+            onSelect: function onSelect() {}
+        });
+
+        datePicker[i].setDate('<%= (@company.published_date.present? ? @company.published_date : Date.today + 5.days).strftime('%d %b %Y') %>');
+    }
+
+    $('#bytes_to_giga').change(function (){
+       var giga = $(this).val();
+       giga = giga * 1000 * 1000 * 1000;
+       $('#company_data_size').val(giga);
+    });
+</script>

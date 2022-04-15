@@ -1,0 +1,26 @@
+<div class="demo-card">
+  <div class="demo-title">
+    <h3 class="title is-thin is-5">Network Interfaces</h3>
+  </div>
+  <div class="card-inner">
+    <% @network_interfaces.each_with_index do |network_interface, index| %>
+      <table class="table is-hoverable is-fullwidth">
+        <thead>
+        <tr>
+          <th colspan="2"><%= network_interface.name %></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td class="tx-dark text-monospace">IN</td>
+          <td class="text-right"><%= number_to_human_size network_interface.in_bytes %></td>
+        </tr>
+        <tr>
+          <td class="tx-dark text-monospace">OUT</td>
+          <td class="text-right"><%= number_to_human_size network_interface.out_bytes %></td>
+        </tr>
+        </tbody>
+      </table>
+    <% end %>
+  </div>
+</div>
