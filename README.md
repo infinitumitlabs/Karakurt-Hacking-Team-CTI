@@ -59,7 +59,17 @@ Following table contains the Ligolo-ng Agent and Command and Control Server used
 When we connected to the Karakurt Blog Web Server, we saw that all of the stolen data had been categorized by a Software that was being developed by Karakurt members.
 ![sQ5iK5_L](https://user-images.githubusercontent.com/42712921/163533238-8e688868-a3c2-444c-8b7d-acedf6a3dfb3.jpg)
 
+## Cobalt Strike Server and Malware Samples [Update - Published]
 
+This data has been obtanied from an Encrypted ZIP folder inside Karakurt C2 Server
 
+| IP              |   Domian Name |
+| ----------------|---------------|
+|108.177.235.127  |  kisizo[.]com |
+
+|  VT Link |
+| --------------------------------|
+|https://www.virustotal.com/gui/file/b7ae3b6f2c04a8d05478509b5047bf50bd880d32125923f093b2ea65fe48fac1/relations|
+|https://www.virustotal.com/gui/file/8cfdb99185fba9abd91d915425826ca9c6ce360fe68f4c8430c358ceab0acf24/relations|
 
 
